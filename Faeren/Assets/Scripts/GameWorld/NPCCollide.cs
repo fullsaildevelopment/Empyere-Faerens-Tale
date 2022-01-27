@@ -9,7 +9,7 @@ public class NPCCollide : MonoBehaviour
         DialogTrigger dt = GetComponent<DialogTrigger>();
         DialogueManager dm = FindObjectOfType<DialogueManager>();
         //dt includes the character's dialog options
-        //Debug.Log(dt.dialog.name);
+        Debug.Log(dt.dialog.name);
         
         if(collisionCount==(dt.dialog.sentences.Length+1) || name != dt.dialog.name)
         {
