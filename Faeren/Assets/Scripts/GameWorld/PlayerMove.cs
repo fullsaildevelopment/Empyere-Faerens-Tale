@@ -31,7 +31,7 @@ public class PlayerMove : MonoBehaviour
         transform.Translate(0, movementVertical, 0);
         if(movementHorizontal <0)
         {
-            Debug.Log("Move Left");
+            
             animations.SetBool("Move left", true);
 
             animations.SetBool("move right", false);
@@ -40,7 +40,7 @@ public class PlayerMove : MonoBehaviour
 
         }
         else if (movementHorizontal >0){
-            Debug.Log("Move Right");
+            
             animations.SetBool("move right", true);
 
             animations.SetBool("Move left", false);
@@ -52,7 +52,7 @@ public class PlayerMove : MonoBehaviour
         
         if(movementVertical <0)
         {
-            Debug.Log("Move Down");
+            
             animations.SetBool("Move Down", true);
 
             animations.SetBool("Move left", false);
@@ -68,8 +68,12 @@ public class PlayerMove : MonoBehaviour
         }
         if(movementVertical ==0&&movementHorizontal==0)
         {
-            animations.SetTrigger("New Trigger");
+                        animations.SetBool("Move Up", false);
+            animations.SetBool("Move left", false);
+            animations.SetBool("move right", false);
+            animations.SetBool("Move Down", false);
         }
-        
+        UnityEngine.Quaternion rotated = transform.rotation;
+        transform.Rotate(new Vector3(rotated.x,rotated.y,-rotated.z));
     }
 }
