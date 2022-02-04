@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Knightboot.unity
-    guid: 05c1b55db2068ba4aa5f0966c2b2f7bc
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/DevSplash.unity
     guid: 2cda990e2423bbf4892e6590ba056729
@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 7cb0a18e7096f0b4faa08277b6c0e022
+  - enabled: 0
+    path: Assets/Scenes/Opening Cutscene.unity
+    guid: 8d23adb1d816878458c101dceb8b1693
   m_configObjects: {}
