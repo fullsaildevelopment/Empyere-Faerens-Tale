@@ -12,5 +12,9 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+    public void GotoCombatScene()
+    {
+        SceneManager.LoadScene("Combat");
+    }
 }
 
