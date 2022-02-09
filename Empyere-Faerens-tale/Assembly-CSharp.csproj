@@ -42,10 +42,11 @@
      <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
      <Compile Include="Assets\Scripts\CameraMotor.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\CombatAreaTrigger.cs" />
      <Compile Include="Assets\Scripts\SC_BackgroundScaler.cs" />
      <Compile Include="Assets\Scripts\DialogTrigger.cs" />
      <Compile Include="Assets\Scripts\opening.cs" />
-     <Compile Include="Assets\Scripts\CombatAreaTrigger.cs" />
+     <Compile Include="Assets\Scripts\NPCCollide.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
