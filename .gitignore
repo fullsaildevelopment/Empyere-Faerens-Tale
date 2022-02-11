@@ -1,29 +1,4 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@FS-rcarroll 
-github
-/
-gitignore
-Public
-Code
-Pull requests
-204
-Actions
-Security
-Insights
-gitignore/Unity.gitignore
-@bdougie
-bdougie Merge branch 'main' into patch-1
-Latest commit eafb2ee on Dec 10, 2021
- History
- 45 contributors
-@mviranyi@theDrake@Tandoori@shana@qCring@LucasSteer@Frozenfire92@FritzsHero@ahmyi@FutureClemens@shiftkey@bdougie
-72 lines (59 sloc)  1.25 KB
+
    
 # This .gitignore file should be placed at the root of your Unity project directory
 #
