@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\CameraMotor.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CombatAreaTrigger.cs" />
+     <Compile Include="Assets\enemyapproaches.cs" />
      <Compile Include="Assets\Scripts\SC_BackgroundScaler.cs" />
      <Compile Include="Assets\Chest.cs" />
      <Compile Include="Assets\Scripts\DialogTrigger.cs" />
