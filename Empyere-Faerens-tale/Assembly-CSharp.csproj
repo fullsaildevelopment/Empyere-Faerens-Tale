@@ -49,15 +49,19 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Dialog.cs" />
+     <Compile Include="Assets\Scripts\Collectable.cs" />
      <Compile Include="Assets\Scripts\DialogueManager.cs" />
      <Compile Include="Assets\Scripts\SceneSwitcher.cs" />
      <Compile Include="Assets\Scripts\CameraMotor.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CombatAreaTrigger.cs" />
      <Compile Include="Assets\Scripts\SC_BackgroundScaler.cs" />
+     <Compile Include="Assets\Chest.cs" />
      <Compile Include="Assets\Scripts\DialogTrigger.cs" />
+     <Compile Include="Assets\Scripts\Collideable.cs" />
      <Compile Include="Assets\Scripts\opening.cs" />
      <Compile Include="Assets\Scripts\NPCCollide.cs" />
+     <Compile Include="Assets\teleportation.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
