@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - sky
+  - 
   - Water
   - UI
   - Blocking
@@ -41,7 +41,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: water
+  - name: sky
     uniqueID: 3858748473
     locked: 0
   - name: Floor
