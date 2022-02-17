@@ -15,10 +15,11 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
     public void StartDialogue (Dialog dialogue)
     {
+        Debug.Log("Box open");
         animator.SetBool("isOpen",true);
         nameText.text = dialogue.name;
         
@@ -29,14 +30,7 @@ public class DialogueManager : MonoBehaviour
         }
         DisplayNextSentence();
 
-        //Time.timeScale = 0;
-        //while (sentences.Count !=0)
-        {
-            if(Input.GetAxis("Jump") !=0)
-            {
-                DisplayNextSentence();
-            }
-        }
+
     }
     public void DisplayNextSentence()
     {
@@ -63,7 +57,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialogue()
     {
-                animator.SetBool("isOpen",false);
+        animator.SetBool("isOpen",false);
 
         Debug.Log("Conversation Over");
         //Time.timeScale = 1;
