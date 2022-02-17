@@ -14,7 +14,7 @@ public class teleportation : Collideable
             //picking certain scene to load for any other scene you would just input the specf name ex. Game or title
             
             
-               // SceneManager.LoadScene("Combat");
+               SceneManager.LoadScene("capitalvillage");
             Debug.Log("star trek ref");
         }
     }
