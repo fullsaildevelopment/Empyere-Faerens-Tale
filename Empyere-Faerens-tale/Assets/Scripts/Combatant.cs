@@ -13,4 +13,5 @@ public class Combatant : MonoBehaviour
    [SerializeField]public bool isAlly;
    //public string name { get; set; }
    [SerializeField]public Spell[] spells ;
+   public bool isTurn;
 }
