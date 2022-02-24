@@ -35,4 +35,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: ae710e08ab6b205489262d6741e92bb0
+  - enabled: 1
+    path: Assets/Scenes/capitalvillage.unity
+    guid: b7b05202d0848fa439f460208a328266
+  - enabled: 1
+    path: Assets/Scenes/shop1.unity
+    guid: b13b73ae6e7beda48a93f5a5ebf4cdc1
+  - enabled: 1
+    path: Assets/Scenes/chrmenu.unity
+    guid: c3ec4605555286941b67032966d0f963
   m_configObjects: {}

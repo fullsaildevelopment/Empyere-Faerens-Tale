@@ -11,6 +11,18 @@ TextureImporter:
   - first:
       213: 3214705320427765192
     second: rug_2
+  - first:
+      213: 4352752416563659992
+    second: cobby
+  - first:
+      213: -5552403342709201435
+    second: Textures_4
+  - first:
+      213: 5381805849114583260
+    second: shopwall
+  - first:
+      213: -2176497188331930611
+    second: rugs
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -108,7 +120,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -129,7 +141,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -150,7 +162,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,6 +170,90 @@ TextureImporter:
       bones: []
       spriteID: 8cdb7a9e47dec9c20800000000000000
       internalID: 3214705320427765192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cobby
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 287
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d40080d245186c30800000000000000
+      internalID: 4352752416563659992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Textures_4
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 113
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e56024e396e1f2b0800000000000000
+      internalID: -5552403342709201435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shopwall
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 391
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd0289ed7e300ba40800000000000000
+      internalID: 5381805849114583260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rugs
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 341
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0cb6dab6578bc1e0800000000000000
+      internalID: -2176497188331930611
       vertices: []
       indices: 
       edges: []

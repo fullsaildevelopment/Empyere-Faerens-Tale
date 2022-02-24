@@ -34,7 +34,11 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("Options");
     }
-
+    //goes to character menu 
+    public void GotoChrcmenu()
+    {
+        SceneManager.LoadScene("Chrmenu");
+    }
 
     //these are the buttons from the main menu options to return to main
    //back button
