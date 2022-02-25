@@ -1,0 +1,1 @@
+This folder will contain database related scripts and otherwise.
