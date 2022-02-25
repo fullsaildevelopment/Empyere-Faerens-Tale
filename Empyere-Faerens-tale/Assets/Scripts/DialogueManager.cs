@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
     public void StartDialogue (Dialog dialogue)
     {
@@ -49,7 +49,7 @@ public class DialogueManager : MonoBehaviour
             string sentence = sentences.Dequeue();
             Debug.Log(sentence);
             StopAllCoroutines();
-            //StartCoroutine(TypeSentence(sentence));
+            StartCoroutine(TypeSentence(sentence));
             dialogueText.text = sentence;
         
     }
