@@ -34,8 +34,17 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("Options");
     }
+    //goes to character menu 
+    public void GotoChrcmenu()
+    {
+        SceneManager.LoadScene("Chrmenu");
+    }
+    //goes from shop to take you back to the village 
 
-
+    public void GotoVillage1()// village 1 = capital village 
+    {
+        SceneManager.LoadScene("capitalvillage");
+    }
     //these are the buttons from the main menu options to return to main
    //back button
    public void GotoTitle()

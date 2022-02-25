@@ -11,11 +11,7 @@ public class NPCCollide : MonoBehaviour
         //dt includes the character's dialog options
         Debug.Log(dt.dialog.name);
         
-        if(collisionCount==(dt.dialog.sentences.Length+1) || name != dt.dialog.name)
-        {
-            collisionCount=0;
-            dm.EndDialogue();
-        }
+        
         
         if(collisionCount==0){
         dt.TriggerDialog();
@@ -25,6 +21,12 @@ public class NPCCollide : MonoBehaviour
 
         }
         collisionCount++;
+        if(collisionCount==(dt.dialog.sentences.Length+1))
+        {
+            collisionCount=0;
+            dm.EndDialogue();
+        }
+        
 
     }
 }
