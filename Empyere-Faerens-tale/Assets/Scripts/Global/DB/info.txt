@@ -1,1 +1,9 @@
 This folder will contain database related scripts and otherwise.
+
+Possible DB's to use:
+
+1: Firebase
+    -This is an online google cloud database. Would bring need to have network calls.
+2: Local Nosql database
+3: Local Sql database
+    -Less "secure" than nosql
