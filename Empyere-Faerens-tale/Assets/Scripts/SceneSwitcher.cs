@@ -4,6 +4,25 @@ using UnityEngine.SceneManagement;
 public class SceneSwitcher : MonoBehaviour
 {
     //scene switcher handles menu scene switching
+    //Loads scene x and unloads previous scene
+    public void SwitchScene(int x)
+    {
+        SceneManager.LoadScene(x, LoadSceneMode.Single);
+    }
+    //Loads scene x but does not unload previous scene.
+    public void SwitchSceneAdd(int x)
+    {
+        SceneManager.LoadScene(x, LoadSceneMode.Additive);
+    }
+    //async(threading) unloads scene x. Good for unloading an add scene
+    public void SwitchUnload(int x)
+    {
+        SceneManager.UnloadSceneAsync(x);
+    }
+
+
+
+    //Belowe is to be removed after finalizing and chasing the rest of the refrences
     public void GotoMainScene()
     {
         SceneManager.LoadScene("main");
