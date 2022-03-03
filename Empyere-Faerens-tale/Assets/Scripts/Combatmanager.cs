@@ -62,10 +62,8 @@ public class Combatmanager : MonoBehaviour
             //NextTurn();
         }
         bool isOver = BattleEndCheck();
-        int loop = 0;
-        if(isOver && loop !=1)
+        if(isOver)
         {
-            loop++;
             Debug.Log("Battle over");
         }
     }
