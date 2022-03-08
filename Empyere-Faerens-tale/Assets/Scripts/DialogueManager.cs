@@ -17,27 +17,37 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
         animator = GetComponent<Animator>();
     }
-    public void StartDialogue (Dialog dialogue)
-    {
-        animator.SetBool("isOpen",true);
-        nameText.text = dialogue.name;
-        
-        sentences.Clear();
-        foreach (string sentence in dialogue.sentences)
+    
+    
+    
+        public void StartDialogue(Dialog dialogue)
         {
-            sentences.Enqueue(sentence);
-        }
-        DisplayNextSentence();
 
-        //Time.timeScale = 0;
-        //while (sentences.Count !=0)
-        {
-            if(Input.GetAxis("Jump") !=0)
+
+            animator.SetBool("isOpen", true);
+            nameText.text = dialogue.name;
+
+            sentences.Clear();
+            foreach (string sentence in dialogue.sentences)
             {
-                DisplayNextSentence();
+                sentences.Enqueue(sentence);
             }
+            DisplayNextSentence();
+
+            //Time.timeScale = 0;
+            //while (sentences.Count !=0)
+            {
+                if (Input.GetAxis("Jump") != 0)
+                {
+                    DisplayNextSentence();
+                }
+            }
+
+
         }
-    }
+    
+
+  
     public void DisplayNextSentence()
     {
         if(sentences.Count==0)
