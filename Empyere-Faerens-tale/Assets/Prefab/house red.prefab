@@ -41,7 +41,7 @@ Tilemap:
   m_GameObject: {fileID: 6591374171341670577}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: -52, y: 84, z: 0}
+  - first: {x: -50, y: 88, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 5
@@ -51,22 +51,22 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -55, y: 86, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
-      m_TileMatrixIndex: 19
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -52, y: 86, z: 0}
+  - first: {x: -50, y: 89, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 6
       m_TileSpriteIndex: 6
       m_TileMatrixIndex: 21
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -51, y: 90, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 4
+      m_TileSpriteIndex: 4
+      m_TileMatrixIndex: 19
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -492,11 +492,11 @@ Tilemap:
       e00: 0.8246764
       e01: 0
       e02: 0
-      e03: 0.13420868
+      e03: -0.21294785
       e10: 0
       e11: 0.8246764
       e12: 0
-      e13: 0.041267395
+      e13: 1.0331421
       e20: 0
       e21: 0
       e22: 0.8246764
@@ -510,11 +510,11 @@ Tilemap:
       e00: 1.516915
       e01: 0
       e02: 0
-      e03: 0.11659622
+      e03: -0.2305603
       e10: 0
       e11: 1.516915
       e12: 0
-      e13: 0.116607666
+      e13: 0.43896484
       e20: 0
       e21: 0
       e22: 1.516915
