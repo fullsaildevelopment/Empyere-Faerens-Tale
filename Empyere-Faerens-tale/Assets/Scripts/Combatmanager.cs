@@ -85,9 +85,11 @@ public class Combatmanager : MonoBehaviour
         defr.health =- atkr.spells[1].damage;
         NextTurn();
     }
-        public void Run(Combatant atkr, Combatant defr)
+        public void Run()
     {
-        GameObject.Find("PLAYER").GetComponent<SceneSwitcher>().GotoMenuScene();
+        GameObject.Find("Rin").GetComponent<SceneSwitcher>().GotoMenuScene();
+
+//        tmp.Transform.position.Set(0,0,0);
     }
         public void Info(Combatant target)
     {
