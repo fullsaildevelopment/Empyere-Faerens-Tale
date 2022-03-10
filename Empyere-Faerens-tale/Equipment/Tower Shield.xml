@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Equipment xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ObjectType>Equipment</ObjectType>
+  <boost>16</boost>
+  <boostType>Defense</boostType>
+  <Name>Tower Shield</Name>
+  <price>0</price>
+</Equipment>
