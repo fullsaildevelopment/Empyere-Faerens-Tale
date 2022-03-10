@@ -51,5 +51,13 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("Title");
     }
+    public void GotoSell()//how to get to sell 
+    {
+        SceneManager.LoadScene("sell");
+    }
+    public void GotoShop()//how to get to shop 
+    {
+        SceneManager.LoadScene("shop1");
+    }
 }
 
