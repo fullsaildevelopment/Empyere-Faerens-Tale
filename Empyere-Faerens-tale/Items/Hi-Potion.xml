@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Item xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ObjectType>Item</ObjectType>
+  <Name>Hi-Potion</Name>
+  <Type>Heal</Type>
+  <Points>0.5</Points>
+  <price>25</price>
+</Item>

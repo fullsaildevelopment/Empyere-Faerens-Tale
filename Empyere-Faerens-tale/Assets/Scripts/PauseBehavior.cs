@@ -26,6 +26,7 @@ public class PauseBehavior : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
     {
         Animator animator = GetComponent<Animator>();
 
@@ -36,6 +37,7 @@ public class PauseBehavior : MonoBehaviour
             invPanel.GetComponent<Animator>().SetTrigger("invSelect");
         }
         else if (Input.GetKeyDown(KeyCode.Tab) && istriggered)
+
         {
             istriggered = false;
             animator.SetTrigger("Hide");
@@ -43,6 +45,7 @@ public class PauseBehavior : MonoBehaviour
     }
     public void ChangePanel(int panelnum)
     {
+
         if (panelnum == 3)
         {
             invPanel.GetComponent<RectTransform>().localScale.Set(1, 0, 1);
@@ -67,3 +70,4 @@ public class PauseBehavior : MonoBehaviour
         }
     }
 }
+
