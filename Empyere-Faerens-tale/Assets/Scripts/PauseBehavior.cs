@@ -33,6 +33,7 @@ public class PauseBehavior : MonoBehaviour
         {
             istriggered = true;
             animator.SetTrigger("Show");
+            invPanel.GetComponent<Animator>().SetTrigger("invSelect");
         }
         else if (Input.GetKeyDown(KeyCode.Tab) && istriggered)
         {
