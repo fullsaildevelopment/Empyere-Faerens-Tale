@@ -11,6 +11,7 @@ TextureImporter:
   - first:
       213: 4032676948156330986
     second: farmanimals_2
+
   - first:
       213: -2681425590639683416
     second: farmanimals_3
@@ -20,6 +21,7 @@ TextureImporter:
   - first:
       213: -8478343239014755984
     second: farmanimals_5
+
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,12 +114,14 @@ TextureImporter:
       name: farmanimals_0
       rect:
         serializedVersion: 2
+
         x: 347
         y: 2472
         width: 149
         height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
+
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,12 +137,14 @@ TextureImporter:
       name: farmanimals_1
       rect:
         serializedVersion: 2
+
         x: 218
         y: 2458
         width: 103
         height: 151
       alignment: 0
       pivot: {x: 0, y: 0}
+
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,12 +160,14 @@ TextureImporter:
       name: farmanimals_2
       rect:
         serializedVersion: 2
+
         x: 514
         y: 2337
         width: 231
         height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
+
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,6 +179,7 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+
     - serializedVersion: 2
       name: farmanimals_3
       rect:
@@ -234,6 +243,7 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+
     outline: []
     physicsShape: []
     bones: []

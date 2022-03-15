@@ -26,15 +26,18 @@ public class PauseBehavior : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
+
+    {
         Animator animator = GetComponent<Animator>();
-        
-        if(Input.GetKeyDown(KeyCode.E)&&!istriggered)
+
+        if (Input.GetKeyDown(KeyCode.Tab) && !istriggered)
         {
             istriggered = true;
             animator.SetTrigger("Show");
+            invPanel.GetComponent<Animator>().SetTrigger("invSelect");
         }
-        else if(Input.GetKeyDown(KeyCode.E)&&istriggered)
+        else if (Input.GetKeyDown(KeyCode.Tab) && istriggered)
+
         {
             istriggered = false;
             animator.SetTrigger("Hide");
@@ -42,26 +45,29 @@ public class PauseBehavior : MonoBehaviour
     }
     public void ChangePanel(int panelnum)
     {
-        if(panelnum ==3)
+
+        if (panelnum == 3)
         {
-            invPanel.GetComponent<RectTransform>().localScale.Set(1,0,1);
-            invPanel.transform.localScale.Set(1,0,1);
-            equipPanel.transform.localScale.Set(1,0,1);
-            questPanel.transform.localScale.Set(1,1,1);
+            invPanel.GetComponent<RectTransform>().localScale.Set(1, 0, 1);
+            invPanel.transform.localScale.Set(1, 0, 1);
+            equipPanel.transform.localScale.Set(1, 0, 1);
+            questPanel.transform.localScale.Set(1, 1, 1);
             Debug.Log("Changing to Quests");
         }
-        else if(panelnum == 2)
+        else if (panelnum == 2)
         {
-            invPanel.transform.localScale.Set(1,0,1);
-            equipPanel.transform.localScale.Set(1,1,1);
-            questPanel.transform.localScale.Set(1,0,1);
+            invPanel.transform.localScale.Set(1, 0, 1);
+            equipPanel.transform.localScale.Set(1, 1, 1);
+            questPanel.transform.localScale.Set(1, 0, 1);
             Debug.Log("Changing to Equipment");
         }
-        else{
-            invPanel.transform.localScale.Set(1,1,1);
-            equipPanel.transform.localScale.Set(1,0,1);
-            questPanel.transform.localScale.Set(1,0,1);
+        else
+        {
+            invPanel.transform.localScale.Set(1, 1, 1);
+            equipPanel.transform.localScale.Set(1, 0, 1);
+            questPanel.transform.localScale.Set(1, 0, 1);
             Debug.Log("Changing to Inventory");
         }
     }
 }
+
