@@ -161,7 +161,7 @@ public class Serializer
         sw.Close();
     }
 
-    public void DeserializeEquioment(string equipmentName, out Equipment equipment)
+    public void DeserializeEquipment(string equipmentName, out Equipment equipment)
     {
         string path = "Equipment/" + equipmentName + ".xml";
 
@@ -176,7 +176,7 @@ public class Serializer
         equipment = Equip;
     }
 
-    public void DeserializeEquiomentFull(string equipmentName, out Equipment equipment)
+    public void DeserializeEquipmentFull(string equipmentName, out Equipment equipment)
     {
         string path = equipmentName;
 
@@ -189,5 +189,53 @@ public class Serializer
         sr.Close();
 
         equipment = Equip;
+    }
+
+    public void SerializeSkill(Skill skill)
+    {
+        string path = "Skills/" + skill.name + ".xml";
+
+        StreamWriter sw = new StreamWriter(path);
+
+        System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(equipment.GetType());
+        x.Serialize(sw, skill);
+
+        sw.Close();
+        sw = new StreamWriter(path);
+
+        System.Xml.Serialization.XmlSerializer y = new System.Xml.Serialization.XmlSerializer(equipment.GetType());
+        y.Serialize(sw, skill);
+
+        sw.Close();
+    }
+
+    public void DeserializeSkill(string skillName, out Skill skill)
+    {
+        string path = "Skills/" + skillName + ".xml";
+
+        StreamReader sr = new StreamReader(path);
+
+        Skill sk = new Skill();
+
+        System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(Equip.GetType());
+        sk = (Skill)x.Deserialize(sr);
+        sr.Close();
+
+        skill = sk;
+    }
+
+    public void DeserializeSkillFull(string skillName, out Skill skill)
+    {
+        string path = skillName;
+
+        StreamReader sr = new StreamReader(path);
+
+        Skill sk = new Skill();
+
+        System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(Equip.GetType());
+        sk = (Skill)x.Deserialize(sr);
+        sr.Close();
+
+        skill = sk;
     }
 }
