@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public float milestailsprower;
     //switches sprites accessing animator script
     public Animator animator;
+    public int tmp;
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
@@ -45,7 +46,10 @@ public class Player : MonoBehaviour
             transform.Translate(moveDelta.x * Time.deltaTime,0, 0);
         }
        
-      
+        UnityEngine.Quaternion rotated = transform.rotation;
+        transform.Rotate(new Vector3(rotated.x,rotated.y,-rotated.z));
+
+
        
     }
 }

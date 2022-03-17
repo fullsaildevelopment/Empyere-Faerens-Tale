@@ -47,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/sell.unity
     guid: 78d9a4ed02b63a94d81a9ccb11ec1d4c
+  - enabled: 1
+    path: Assets/Scenes/Plains.unity
+    guid: 84e933510d73c8648bd2f50b29cec247
+  - enabled: 1
+    path: Assets/Scenes/giant.unity
+    guid: f6efce86d17a5344e879f22d37996c69
   m_configObjects: {}
