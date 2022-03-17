@@ -234,6 +234,62 @@ public class Enemy : Character
     public Skill supportLogic()
     {
 
+        if (CurrentHealth > MaxHealth / 2)
+        {
+            System.Random random = new System.Random();
+            int i = random.Next(100);
+            if (i > 67)
+            {
+                return attack;
+            }
+            List<Skill> options = new List<Skill>();
+            if (random.Next(100) > 50)
+            {
+                foreach (Skill skill in skills)
+                {
+                    if (skill.type == SkillType.Damage)
+                    {
+                        options.Add(skill);
+                    }
+                }
+                return options[random.Next(options.Count + 1)];
+            }
+            else
+            {
+                foreach( Skill skill in skills)
+                {
+                    if(skill.type == SkillType.Support || skill.type == SkillType.Heal)
+                    {
+                        options.Add(skill);
+                    }
+                }
+            }
+        }
+        else
+        {
+            System.Random random = new System.Random();
+            List<Skill> options = new List<Skill>();
+            foreach (Skill skill in skills)
+            {
+                if (skill.type == SkillType.Heal && skill.target == SkillTarget.Self || skill.type == SkillType.Heal && skill.target == SkillTarget.Party)
+                {
+                    options.Add(skill);
+                }
+            }
+            int i = random.Next(100);
+            if (i > 80)
+            {
+                return attack;
+            }
+            if(i > 30 && i < 79)
+            {
+                return options[random.Next(options.Count + 1)];
+            }
+
+        }
+        System.Random rand = new System.Random();
+        return skills[rand.Next(skills.Count + 1)];
+
     }
 
 
