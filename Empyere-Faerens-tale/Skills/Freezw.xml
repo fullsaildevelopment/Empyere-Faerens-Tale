@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Skill xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ObjectType>Skill</ObjectType>
+  <name>Freezw</name>
+  <type>Damage</type>
+  <damage>Ice</damage>
+  <target>Party</target>
+  <statcheck>Magic</statcheck>
+  <modifier>0.8</modifier>
+  <cost>30</cost>
+</Skill>

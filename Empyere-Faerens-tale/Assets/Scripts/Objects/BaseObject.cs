@@ -8,7 +8,8 @@ public enum Identiy
     Character,
     Item,
     Equipment,
-    Enemy
+    Enemy,
+    Skill
 }
 
 public class BaseObject

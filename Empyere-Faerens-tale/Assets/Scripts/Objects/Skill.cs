@@ -46,6 +46,7 @@ public class Skill : BaseObject
     public StatType statcheck;
     //Modifier for damage/effectivness. modifier * character stat
     public float modifier;
+    public int cost;
 
     #endregion
 
@@ -53,24 +54,28 @@ public class Skill : BaseObject
 
     public Skill()
     {
+        ObjectType = Identiy.Skill;
         name = null;
         type = SkillType.None;
         damage = DamageType.None;
         target = SkillTarget.None;
         statcheck = StatType.None;
         modifier = 1.0f;
+        cost = 0;
     }
     //Creates basic Attack skill. Give an int of 1
     public Skill(int i)
     {
         if (i == 1)
         {
+            ObjectType = Identiy.Skill;
             name = "Attack";
             type = SkillType.Damage;
             target = SkillTarget.Single;
             statcheck = StatType.Attack;
             damage = DamageType.None;
             modifier = 1.0f;
+            cost = 0;
         }
     }
 

@@ -197,13 +197,13 @@ public class Serializer
 
         StreamWriter sw = new StreamWriter(path);
 
-        System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(equipment.GetType());
+        System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(skill.GetType());
         x.Serialize(sw, skill);
 
         sw.Close();
         sw = new StreamWriter(path);
 
-        System.Xml.Serialization.XmlSerializer y = new System.Xml.Serialization.XmlSerializer(equipment.GetType());
+        System.Xml.Serialization.XmlSerializer y = new System.Xml.Serialization.XmlSerializer(skill.GetType());
         y.Serialize(sw, skill);
 
         sw.Close();
@@ -217,7 +217,7 @@ public class Serializer
 
         Skill sk = new Skill();
 
-        System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(Equip.GetType());
+        System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(sk.GetType());
         sk = (Skill)x.Deserialize(sr);
         sr.Close();
 
@@ -232,7 +232,7 @@ public class Serializer
 
         Skill sk = new Skill();
 
-        System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(Equip.GetType());
+        System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(sk.GetType());
         sk = (Skill)x.Deserialize(sr);
         sr.Close();
 
