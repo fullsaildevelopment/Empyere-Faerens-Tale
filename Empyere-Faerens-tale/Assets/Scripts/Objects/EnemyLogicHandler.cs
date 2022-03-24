@@ -17,7 +17,7 @@ public class EnemyLogicHandler
         PartyDesignation targetParty;
         int targetPosition;
         ELHSkillDesignation(skill.type, out targetPosition, out targetParty);
-        ELHtoCombatHandler(targetPosition, targetParty);
+        ELHtoCombatHandler(targetPosition, targetParty, selectedSkill);
     }
     public void ELHSkillDesignation(SkillType st, out int position, out PartyDesignation partyDesignation)
     {
@@ -139,7 +139,7 @@ public class EnemyLogicHandler
         return final;
     }
     //Messenger function to CombatHandler to execute skill. (apply damage and/or effects)
-    public bool ELHtoCombatHandler(int target, PartyDesignation partyDesig)
+    public bool ELHtoCombatHandler(int target, PartyDesignation partyDesig, Skill skill)
     {
         return false;
     }
