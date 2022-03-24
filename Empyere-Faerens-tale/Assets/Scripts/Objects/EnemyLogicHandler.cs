@@ -17,6 +17,7 @@ public class EnemyLogicHandler
         PartyDesignation targetParty;
         int targetPosition;
         ELHSkillDesignation(skill.type, out targetPosition, out targetParty);
+        ELHtoCombatHandler(targetPosition, targetParty);
     }
     public void ELHSkillDesignation(SkillType st, out int position, out PartyDesignation partyDesignation)
     {
@@ -27,11 +28,17 @@ public class EnemyLogicHandler
                 partyDesignation = PartyDesignation.Opposition;
                 break;
             case SkillType.Heal:
-
+                position = ELHHeal();
+                partyDesignation = PartyDesignation.Ally;
                 break;
             case SkillType.Support:
+                position = ELHSupport();
+                partyDesignation = PartyDesignation.Opposition;
                 break;
             default:
+                Debug.LogError("No Skill Target");
+                position = 0;
+                partyDesignation = PartyDesignation.None;
                 break;
         }
     }
@@ -62,7 +69,7 @@ public class EnemyLogicHandler
         }
         return final;
     }
-
+    
     public int ELHHeal()
     {
         int selection = 0;
@@ -103,6 +110,38 @@ public class EnemyLogicHandler
             return final;
         }
 
+    }
+    //For attack type support skills. (Special Cases Coming Soon)
+    public int ELHSupport()
+    {
+        int selection = 0;
+        int final = 0;
+        if (selectedSkill.target == SkillTarget.Party)
+        {
+            return 4;
+        }
+        foreach (Character character in opposition.active_characters)
+        {
+            if (selection == 0)
+            {
+                selection = 1;
+            }
+            else if (opposition.active_characters[selection + 1].CurrentHealth > character.MaxHealth)
+            {
+                selection++;
+                final = selection;
+            }
+            else
+            {
+                selection++;
+            }
+        }
+        return final;
+    }
+    //Messenger function to CombatHandler to execute skill. (apply damage and/or effects)
+    public bool ELHtoCombatHandler(int target, PartyDesignation partyDesig)
+    {
+        return false;
     }
 
 }

@@ -6,7 +6,8 @@ using UnityEngine;
 public enum PartyDesignation
 {
     Ally,
-    Opposition
+    Opposition,
+    None
 }
 public class Party : MonoBehaviour
 {
