@@ -13,6 +13,7 @@ public class EnemyLogicHandler
     {
         ally = character.GetParty();
         opposition = ally.Opposition;
+        current = character;
         PartyDesignation targetParty;
         int targetPosition;
         ELHSkillDesignation(skill.type, out targetPosition, out targetParty);
@@ -49,7 +50,7 @@ public class EnemyLogicHandler
             {
                 selection = 1;
             }
-            else if (opposition.active_characters[selection].CurrentHealth < character.MaxHealth)
+            else if (opposition.active_characters[selection+1].CurrentHealth < character.MaxHealth)
             {
                 selection++;
                 final = selection;
@@ -60,6 +61,48 @@ public class EnemyLogicHandler
             }
         }
         return final;
+    }
+
+    public int ELHHeal()
+    {
+        int selection = 0;
+        int final = 0;
+        if(selectedSkill.target == SkillTarget.Self)
+        {
+            foreach(Character character in ally.active_characters)
+            {
+                if(character.Name == current.Name)
+                {
+                    selection++;
+                    break;
+                }
+                else
+                {
+                    selection++;
+                }
+            }
+            return final;
+        }
+        else if(selectedSkill.target == SkillTarget.Party)
+        { return 4; }
+        else
+        {
+            foreach(Character c in ally.active_characters)
+            {
+                if(selection == 0)
+                {
+                    selection++;
+                    final = selection;
+                }
+                if(c.CurrentHealth < ally.active_characters[selection + 1].CurrentHealth)
+                {
+                    selection++;
+                    final = selection;
+                }
+            }
+            return final;
+        }
+
     }
 
 }
