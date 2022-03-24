@@ -20,6 +20,9 @@ TextureImporter:
   - first:
       213: -2319195165679542866
     second: IceTileset_5
+  - first:
+      213: -999026989445350064
+    second: IceTileset_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -230,6 +233,27 @@ TextureImporter:
       bones: []
       spriteID: ead1ed0d84090dfd0800000000000000
       internalID: -2319195165679542866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceTileset_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 194
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05df4150f3eb222f0800000000000000
+      internalID: -999026989445350064
       vertices: []
       indices: 
       edges: []

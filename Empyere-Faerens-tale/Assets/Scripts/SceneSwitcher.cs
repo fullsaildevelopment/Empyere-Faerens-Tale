@@ -13,7 +13,10 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
-    
+    public void Gototitan()
+    {
+        SceneManager.LoadScene("giant");
+    }
     public void GotoCombatScene()
     {
         SceneManager.LoadScene("Combat");
