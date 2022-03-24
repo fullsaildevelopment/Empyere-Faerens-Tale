@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum PartyDesignation
+{
+    Ally,
+    Opposition
+}
 public class Party : MonoBehaviour
 {
     //Contains the 3 Active characters
@@ -11,6 +17,8 @@ public class Party : MonoBehaviour
 
     //List of all characters obtained
     public List<Character> characters = new List<Character>();
+
+    public Party Opposition = new Party();
 
     #region Constructors
     public Party()
@@ -42,18 +50,29 @@ public class Party : MonoBehaviour
             Character[] chars = new Character[3];
             return chars;
         }
+        foreach (Character character in active_characters)
+        {
+            character.SetParty(null);
+        }
         active_characters = characters;
+        foreach (Character character in active_characters)
+        {
+            character.SetParty(this);
+        }
         return active_characters;
     }
     //Replaces 1 character in active party. Input is in normal order starting at 1.
     public Character[] ReplaceActive(Character character, int i)
     {
+        active_characters[i - 1].SetParty(null);
+        character.SetParty(this);
         active_characters[i-1] = character;
         return active_characters;
     }
     //Removes 1 character from active party. Input is in normal order starting at 1.
     public Character[] RemoveActive(int i)
     {
+        active_characters[i - 1].SetParty(null);
         active_characters[i-1] = new Character();
         return active_characters;
     }

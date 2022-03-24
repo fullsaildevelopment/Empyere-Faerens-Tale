@@ -293,5 +293,15 @@ public class Enemy : Character
     }
 
 
+
+        #region Logic Execution
+
+    public void ExecuteLogic()
+    {
+        EnemyLogicHandler ELH = new EnemyLogicHandler();
+    }
+
+        #endregion
+
     #endregion
 }

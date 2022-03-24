@@ -28,6 +28,9 @@ public class Character : BaseObject
     public Equipment Armor = new Equipment();
     public Equipment Weapon = new Equipment();
 
+    //Party Character is in
+    public Party currentParty = new Party();
+
     //Basic Attack Skill
     public Skill attack = new Skill(1);
 
@@ -125,7 +128,17 @@ public class Character : BaseObject
         ElementalAffinity = element;
     }
 
-    #endregion Getters & Setters
+    public void SetParty(Party party)
+    {
+        currentParty = party;
+    }
+
+    public Party GetParty()
+    {
+        return currentParty;
+    }
+
+    #endregion
 
     public Character()
     {
