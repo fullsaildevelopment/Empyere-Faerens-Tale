@@ -11,26 +11,35 @@ public class Player : MonoBehaviour
     private Vector3 moveDelta;
     private RaycastHit2D baam;
     public float milestailsprower;
+    public float PlayerSpeed;
     //switches sprites accessing animator script
     public Animator animator;
     public int tmp;
+    private Vector2 movedirection;
+    public Rigidbody2D buff;
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
     }
     private void FixedUpdate()
     {
+        Move();
+        
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
+        movedirection = new Vector2(x, y);
         //reset the Movedelta
-        moveDelta = new Vector3(x, y,0);
+        moveDelta = new Vector3(x, y,3);
         //turns left or right and up and down 
         if (moveDelta.x > 0)
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-6, 6, 6);
 
         else if (moveDelta.x < 0)
+
             transform.localScale = new Vector3(1, 1, 1);
+            
         //animator.SetFloat("speed", Mathf.Abs(x));
+
 
         //collision 
         baam = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("People", "Blocking"));
@@ -51,5 +60,10 @@ public class Player : MonoBehaviour
 
 
        
+    }
+
+   void Move()
+    {
+        buff.velocity = new Vector2(movedirection.x * PlayerSpeed, movedirection.y * PlayerSpeed);
     }
 }
