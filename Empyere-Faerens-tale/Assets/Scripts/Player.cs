@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
         else if (moveDelta.x < 0)
             transform.localScale = new Vector3(1, 1, 1);
-        animator.SetFloat("speed", Mathf.Abs(x));
+        //animator.SetFloat("speed", Mathf.Abs(x));
 
         //collision 
         baam = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("People", "Blocking"));

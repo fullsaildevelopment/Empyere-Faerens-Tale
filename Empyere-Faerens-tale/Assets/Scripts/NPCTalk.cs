@@ -10,6 +10,7 @@ public class NPCTalk : MonoBehaviour
                 if(Input.GetKeyDown(KeyCode.F)||Input.GetKeyDown(KeyCode.Space)||Input.GetMouseButtonDown(1))
                 {
                     toggle = true;
+                    Debug.Log("Toggled");
                 }
 
     }
