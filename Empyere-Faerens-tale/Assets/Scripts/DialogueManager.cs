@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     [SerializeField] public float typingSpeed = .0100f;
     float original;
+    public Animator icon;
     bool toggle = false;
     // Start is called before the first frame update
     /*
@@ -37,6 +38,7 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
         animator = GetComponent<Animator>();
         original = typingSpeed;
+        icon = GameObject.Find("dialogueIcon").GetComponent<Animator>();
     }
     
     
@@ -76,7 +78,8 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-        
+            icon.SetTrigger("NotDone");
+            
             string sentence = sentences.Dequeue();
             Debug.Log(sentence);
             StopAllCoroutines();
@@ -91,6 +94,8 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return new WaitForSecondsRealtime(typingSpeed);
         }
+        icon.ResetTrigger("NotDone");
+        icon.SetTrigger("IsDone");
     }
     public void EndDialogue()
     {
