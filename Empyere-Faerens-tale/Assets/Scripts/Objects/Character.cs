@@ -28,6 +28,9 @@ public class Character : BaseObject
     public Equipment Armor = new Equipment();
     public Equipment Weapon = new Equipment();
 
+    //Basic Attack Skill
+    public Skill attack = new Skill(1);
+
     #endregion Members
 
     #region Getters & Setters
