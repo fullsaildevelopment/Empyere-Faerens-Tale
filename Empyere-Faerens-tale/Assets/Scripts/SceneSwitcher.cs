@@ -9,9 +9,9 @@ public class SceneSwitcher : MonoBehaviour
         SceneManager.LoadScene("main");
     }
     //on click goes to game 
-    public void GotoMenuScene()
+    public void GotoMenuScene()// this has the first village in it/ courtyard and etc 
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Capital");
     }
     public void Gototitan()
     {
@@ -44,10 +44,7 @@ public class SceneSwitcher : MonoBehaviour
     }
     //goes from shop to take you back to the village 
 
-    public void GotoVillage1()// village 1 = capital village 
-    {
-        SceneManager.LoadScene("capitalvillage");
-    }
+   
     //these are the buttons from the main menu options to return to main
    //back button
    public void GotoTitle()

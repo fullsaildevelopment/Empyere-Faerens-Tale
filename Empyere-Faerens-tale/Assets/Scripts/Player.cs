@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
@@ -55,6 +56,7 @@ public class Player : MonoBehaviour
             transform.Translate(moveDelta.x * Time.deltaTime,0, 0);
         }
        
+        //rotate back if soemthing hits the player 
         UnityEngine.Quaternion rotated = transform.rotation;
         transform.Rotate(new Vector3(rotated.x,rotated.y,-rotated.z));
 
@@ -65,5 +67,23 @@ public class Player : MonoBehaviour
    void Move()
     {
         buff.velocity = new Vector2(movedirection.x * PlayerSpeed, movedirection.y * PlayerSpeed);
+    }
+
+    //saving and loading 
+
+    public void  SavePlayer()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+       Scene scene = SceneManager.GetActiveScene();
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+
+        transform.position = position;
     }
 }
