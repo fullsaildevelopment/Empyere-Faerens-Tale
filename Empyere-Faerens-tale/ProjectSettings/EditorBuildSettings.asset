@@ -8,14 +8,14 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/DevSplash.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: a797b25b3faad884b82383f7519ed151
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/Capital.unity
     guid: 7cb0a18e7096f0b4faa08277b6c0e022
   - enabled: 0
     path: Assets/Scenes/Opening Cutscene.unity
@@ -35,16 +35,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: ae710e08ab6b205489262d6741e92bb0
-  - enabled: 1
-    path: Assets/Scenes/capitalvillage.unity
-    guid: b7b05202d0848fa439f460208a328266
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/shop1.unity
     guid: b13b73ae6e7beda48a93f5a5ebf4cdc1
   - enabled: 1
     path: Assets/Scenes/chrmenu.unity
     guid: c3ec4605555286941b67032966d0f963
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/sell.unity
-    guid: 78d9a4ed02b63a94d81a9ccb11ec1d4c
+    path: Assets/Scenes/Plains.unity
+    guid: 84e933510d73c8648bd2f50b29cec247
+  - enabled: 1
+    path: Assets/Scenes/giant.unity
+    guid: f6efce86d17a5344e879f22d37996c69
   m_configObjects: {}

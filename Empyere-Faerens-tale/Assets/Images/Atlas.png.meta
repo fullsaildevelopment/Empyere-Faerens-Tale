@@ -143,6 +143,9 @@ TextureImporter:
   - first:
       213: -9037411367760340442
     second: chest_0
+  - first:
+      213: -2285114424382770006
+    second: cursor
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1185,7 +1188,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1206,7 +1209,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1214,6 +1217,27 @@ TextureImporter:
       bones: []
       spriteID: 62a51974e3aa49280800000000000000
       internalID: -9037411367760340442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cursor
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 161
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa43b8fb984a940e0800000000000000
+      internalID: -2285114424382770006
       vertices: []
       indices: 
       edges: []

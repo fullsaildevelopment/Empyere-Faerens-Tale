@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: moon
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 21300000, guid: e5970714dbed54b4fa7f32ae17c84c99, type: 3}
+  - {fileID: 21300000, guid: b59f20ee7d3a88e43a1a7e2fc4a70914, type: 3}
+  - {fileID: 21300000, guid: 55d8e56d82f25bd4185cca733c45c944, type: 3}
+  - {fileID: 21300000, guid: 9470ecd40ca1aac41b60726b38e08a10, type: 3}
+  - {fileID: 21300000, guid: ce6359683d296b14da10ccc4858b2d69, type: 3}
+  - {fileID: 21300000, guid: 376e0bc4eaa32a943b445f84a1d0b4b7, type: 3}
+  - {fileID: 21300000, guid: 21cfd1e8add867a49b83a838b6967381, type: 3}
+  - {fileID: 21300000, guid: 84d114b12235eda40adfdf4511a50703, type: 3}
+  - {fileID: 21300000, guid: b9592261d8c422542baa6005737ab0ca, type: 3}
+  - {fileID: 21300000, guid: 8a3ea0598d905b4408c0ac42906bd7c0, type: 3}
+  m_MinSpeed: 3
+  m_MaxSpeed: 3
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
