@@ -2820,7 +2820,7 @@ GameObject:
   - component: {fileID: 93596165222612434}
   - component: {fileID: 93596165222612437}
   m_Layer: 0
-  m_Name: Inventory
+  m_Name: Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2881,6 +2881,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3820888923777979287}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89378d76ef30ed04f9773ea1ad0a055a, type: 3}
+  m_Script: {fileID: 11500000, guid: 699c1f947047a83449f37ecdc390f2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
