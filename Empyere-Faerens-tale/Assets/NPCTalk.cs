@@ -6,14 +6,19 @@ public class NPCTalk : MonoBehaviour
 {
     int collisionCount = 0;
     bool toggle;
-    private void Update()
-    {
+   public  bool auto;
+  
+        private void Update() {
         if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(1))
         {
             toggle = true;
+            auto = false;
+           
         }
-
+       
     }
+
+    
     private void OnTriggerStay2D(Collider2D other)
     {
         Debug.Log("triggers");
