@@ -14,6 +14,7 @@ public class hometown : Collideable
 
 
             SceneManager.LoadScene("capitalvillage");
+            coll.transform.position = new Vector3(.3f,84.5f,0);
             Debug.Log("welcome home");
         }
     }
