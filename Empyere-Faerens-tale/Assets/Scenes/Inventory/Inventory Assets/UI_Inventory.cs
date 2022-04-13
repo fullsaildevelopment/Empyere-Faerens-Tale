@@ -28,8 +28,21 @@ public class UI_Inventory : MonoBehaviour
                     Items.Add(item, 1);
                 }
             }
+            if(obj.ObjectType == Identiy.Equipment)
+            {
+                Equipment equip = obj as Equipment;
+                if(Items.ContainsKey(equip) == true)
+                {
+                    Items[equip]++;
+                }
+                else
+                {
+                    Items.Add(equip, 1);
+                }
+            }
         }
         slots = ItemsParent.GetComponentsInChildren<InventorySlot>();
+        Debug.Log(slots.Length.ToString());
         UpdateUI();
 
 
