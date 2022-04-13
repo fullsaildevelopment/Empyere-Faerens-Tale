@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 0ef561fd79c98dd40832510edba6c363
+guid: acda95a4ec6c39643aab257c5bfc49fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7151958888795693489
-    second: GUI_0
-  - first:
-      213: 8105364098890919055
-    second: GUI_1
-  - first:
-      213: -5376358965234703051
-    second: GUI_2
+      213: 1004599661567422343
+    second: snowroof
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,13 +94,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GUI_0
+      name: snowroof
       rect:
         serializedVersion: 2
-        x: 48
-        y: 177
-        width: 31
-        height: 31
+        x: 251
+        y: 23
+        width: 57
+        height: 76
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,50 +108,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4e922988432fbc90800000000000000
-      internalID: -7151958888795693489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_1
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 244
-        width: 26
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8ce89134b90c7070800000000000000
-      internalID: 8105364098890919055
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 175
-        width: 48
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 535e23c91065365b0800000000000000
-      internalID: -5376358965234703051
+      spriteID: 78f2431d11e01fd00800000000000000
+      internalID: 1004599661567422343
       vertices: []
       indices: 
       edges: []

@@ -27,9 +27,6 @@ EditorBuildSettings:
     path: Assets/Scenes/innercastle.unity
     guid: bc7d64c985fa0204fbf3cbcbb7cc191a
   - enabled: 1
-    path: Assets/Scenes/Load.unity
-    guid: a71d737c49508e642a77dbcef9c7f8d1
-  - enabled: 1
     path: Assets/Scenes/Options.unity
     guid: 3c6bf0d8ea03f214ba5a8465913e5f6e
   - enabled: 1
