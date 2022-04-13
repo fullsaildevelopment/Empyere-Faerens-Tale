@@ -7,6 +7,7 @@ public enum SkillType
     Damage,
     Heal,
     Support,
+    Tank,
     None
 }
 public enum SkillTarget
@@ -78,7 +79,21 @@ public class Skill : BaseObject
             cost = 0;
         }
     }
-
+    public void AttachSkill(Character c)
+    {
+        if(c.Statuses.ContainsKey(this) == true && c.Statuses[this] < 3)
+        {
+            c.Statuses[this]++;
+        }
+        else if (c.Statuses.ContainsKey(this) != true)
+        {
+            c.Statuses.Add(this, 1);
+        }
+        else
+        {
+            return;
+        }
+    }
     #endregion
 
 }
