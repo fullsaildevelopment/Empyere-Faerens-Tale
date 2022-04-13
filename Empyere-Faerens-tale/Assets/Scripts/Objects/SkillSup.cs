@@ -57,6 +57,9 @@ public class SkillSup : Skill
             case Status.Slow:
                 TickDown(this);
                 break;
+            case Status.Stop:
+                TickDown(this);
+                break;
             case Status.Doom:
                 TickDown(this);
                 break;
