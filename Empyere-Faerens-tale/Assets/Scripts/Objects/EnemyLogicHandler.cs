@@ -25,12 +25,18 @@ public class EnemyLogicHandler
                 if (s.type == SkillType.Support)
                 {
                     SkillSup ts = s as SkillSup;
-                    ts.SkillHeartbeat(c);
+                    for (int i = 0; c.Statuses[s] > i; i++)
+                    {
+                        ts.SkillHeartbeat(c);
+                    }
                 }
                 if (s.type == SkillType.Tank)
                 {
                     SkillTank ts = s as SkillTank;
-                    ts.SkillHeartbeat(c);
+                    for (int i = 0; c.Statuses[s] > i; i++)
+                    {
+                        ts.SkillHeartbeat(c);
+                    }
                 }
             }
         }
@@ -41,12 +47,18 @@ public class EnemyLogicHandler
                 if (s.type == SkillType.Support)
                 {
                     SkillSup ts = s as SkillSup;
-                    ts.SkillHeartbeat(c);
+                    for (int i = 0; c.Statuses[s] > i; i++)
+                    {
+                        ts.SkillHeartbeat(c);
+                    }
                 }
                 if (s.type == SkillType.Tank)
                 {
                     SkillTank ts = s as SkillTank;
-                    ts.SkillHeartbeat(c);
+                    for (int i = 0; c.Statuses[s] > i; i++)
+                    {
+                        ts.SkillHeartbeat(c);
+                    }
                 }
             }
         }
@@ -79,17 +91,18 @@ public class EnemyLogicHandler
         }
         return s;
     }
+
     public void ApplySkill(Character target, Skill skill)
     {
-        if(skill.type == SkillType.Tank || skill.type == SkillType.Support)
+        if (skill.type == SkillType.Tank || skill.type == SkillType.Support)
         {
             skill.AttachSkill(target);
         }
-        if(skill.type == SkillType.Damage)
+        if (skill.type == SkillType.Damage)
         {
             target.CurrentHealth -= (int)skill.modifier;
         }
-        if(skill.type == SkillType.Heal)
+        if (skill.type == SkillType.Heal)
         {
             target.CurrentHealth += (int)skill.modifier;
         }
