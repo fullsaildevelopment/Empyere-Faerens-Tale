@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Net;
+using System.Collections.Generic;
+
 
 public class Character : BaseObject
 {
@@ -30,6 +32,10 @@ public class Character : BaseObject
 
     //Basic Attack Skill
     public Skill attack = new Skill(1);
+
+    //Statuses
+    //Max of 3 of a single skill. (Makes skills stack to increase effect. Ex: 2 Stacks of poison each cause 5 pnts of damage for a total of 10.
+    public Dictionary<Skill, int> Statuses = new Dictionary<Skill, int>();
 
     #endregion Members
 
