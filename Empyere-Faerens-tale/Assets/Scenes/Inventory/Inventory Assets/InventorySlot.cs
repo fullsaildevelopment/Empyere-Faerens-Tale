@@ -14,14 +14,17 @@ public class InventorySlot : MonoBehaviour
         {
             Item i = (Item)item;
             itemname.GetComponent<Text>().text = i.Name;
+            itemname.SetActive(true);
         }
         if(item.ObjectType == Identiy.Equipment)
         {
             Equipment i = (Equipment)item;
             itemname.GetComponent<Text>().text = i.Name;
+            itemname.SetActive(true) ;
         }
         GameObject itemcount = gameObject.transform.GetChild(2).gameObject;
         itemcount.GetComponent<Text>().text = count.ToString();
+        itemcount.SetActive(true) ;
 
     }
     public void ClearSlot()
