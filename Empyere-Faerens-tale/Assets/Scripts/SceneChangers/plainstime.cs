@@ -14,6 +14,7 @@ public class plainstime : Collideable
 
 
             SceneManager.LoadScene("Plains");
+            coll.transform.position = new Vector3(-494,-774,0);
             Debug.Log("the hills are alivee");
         }
     }

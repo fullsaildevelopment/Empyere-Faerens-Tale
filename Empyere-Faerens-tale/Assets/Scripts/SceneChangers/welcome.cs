@@ -14,6 +14,7 @@ public class welcome : Collideable
 
 
             SceneManager.LoadScene("innercastle");
+            coll.transform.position = new Vector3(-102,-615,0);
             Debug.Log("come on jeffery you can do it...");
         }
     }
