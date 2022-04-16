@@ -6,11 +6,13 @@ public class NPCTalk : MonoBehaviour
 {
     int collisionCount = 0;
     bool toggle;
+    [SerializeField] public bool auto;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(1) || auto)
         {
             toggle = true;
+            auto = false;
         }
 
     }

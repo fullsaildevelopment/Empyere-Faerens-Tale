@@ -10,12 +10,35 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     private Queue<string> sentences;
     public Animator animator;
-    float typingSpeed = 10;
+    [SerializeField] public float typingSpeed = .0100f;
+    float original;
+    public Animator icon;
+    bool toggle = false;
     // Start is called before the first frame update
+    /*
+        private void Update() {
+                if(Input.GetKeyDown(KeyCode.F)||Input.GetKeyDown(KeyCode.Space)||Input.GetMouseButtonDown(1))
+                {
+                    toggle = !toggle;
+                    Debug.Log("Toggled");
+                }
+                
+                if(toggle)
+                {
+                    typingSpeed = .001f;
+                }
+                else{
+                    typingSpeed = original;
+                }
+
+    }
+    */
     void Start()
     {
         sentences = new Queue<string>();
         animator = GetComponent<Animator>();
+        original = typingSpeed;
+        icon = GameObject.Find("dialogueIcon").GetComponent<Animator>();
     }
     
     
@@ -55,12 +78,13 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-        
+            icon.SetTrigger("NotDone");
+            
             string sentence = sentences.Dequeue();
             Debug.Log(sentence);
             StopAllCoroutines();
-            //StartCoroutine(TypeSentence(sentence));
-            dialogueText.text = sentence;
+            StartCoroutine(TypeSentence(sentence));
+            //dialogueText.text = sentence;
         
     }
     IEnumerator TypeSentence (string sentence){
@@ -70,6 +94,8 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return new WaitForSecondsRealtime(typingSpeed);
         }
+        icon.ResetTrigger("NotDone");
+        icon.SetTrigger("IsDone");
     }
     public void EndDialogue()
     {

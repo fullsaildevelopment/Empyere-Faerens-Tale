@@ -36,10 +36,11 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(-6, 6, 6);
 
         else if (moveDelta.x < 0)
-            transform.localScale = new Vector3(6, 6, 6);
-        animator.SetFloat("speed", Mathf.Abs(x));
-        //whether to go to the facing away anim or not
-        animator.SetFloat("vertical", Mathf.Abs(y));
+
+            transform.localScale = new Vector3(1, 1, 1);
+            
+        //animator.SetFloat("speed", Mathf.Abs(x));
+
 
         //collision 
         baam = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("People", "Blocking"));
@@ -78,7 +79,6 @@ public class Player : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();
        Scene scene = SceneManager.GetActiveScene();
-
         Vector3 position;
         position.x = data.position[0];
         position.y = data.position[1];

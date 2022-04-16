@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Skill xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ObjectType>Skill</ObjectType>
+  <name>Example</name>
+  <type>Support</type>
+  <damage>Fire</damage>
+  <target>Single</target>
+  <statcheck>Attack</statcheck>
+  <modifier>0.6</modifier>
+  <cost>5</cost>
+</Skill>
