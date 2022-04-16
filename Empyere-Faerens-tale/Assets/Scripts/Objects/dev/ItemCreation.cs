@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemCreation : MonoBehaviour
 {
-    List<Item> items = new List<Item>();
+   /*// List<Item> items = new List<Item>();
     List<Equipment> equip = new List<Equipment>();
     List<Skill> SkillList = new List<Skill>();
 
@@ -376,4 +376,5 @@ public class ItemCreation : MonoBehaviour
             sz.SerializeSkill(skill);
         }
     }
+   */
 }

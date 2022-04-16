@@ -22,6 +22,29 @@ public class Player : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider2D>();
     }
+
+    // :D Inventory for player!!!
+
+    public InventoryObject inventory;
+
+    // for pickups / inventory
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        var item = collision.GetComponent<Item>();
+        if (item)
+        {
+            inventory.AddItem(item.item, 1);
+            Destroy(collision.gameObject);
+        }
+    }
+    //clears the inventory 
+    private void OnApplicationQuit()
+    {
+        inventory.Container.Clear();
+    }
+
+
+
     private void FixedUpdate()
     {
         Move();
@@ -86,4 +109,5 @@ public class Player : MonoBehaviour
 
         transform.position = position;
     }
+    
 }
