@@ -1,55 +1,73 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PauseBehavior : MonoBehaviour
 {
-    public GameObject pauseScreen;
-  public  bool ispaused;
+    // Start is called before the first frame update
+    bool invOpen;
+    bool equipOpen;
+    bool questOpen;
+    bool istriggered;
+    GameObject invPanel;
+    GameObject equipPanel;
+    GameObject questPanel;
 
     void Start()
     {
-        pauseScreen.SetActive(false);
+        invOpen = false;
+        equipOpen = false;
+        questOpen = false;
+        invPanel = GameObject.Find("Inventory");
+        equipPanel = GameObject.Find("Equipment");
+        questPanel = GameObject.Find("Quests");
+        istriggered = false;
     }
 
     // Update is called once per frame
     void Update()
 
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        Animator animator = GetComponent<Animator>();
+
+        if (Input.GetKeyDown(KeyCode.Tab) && !istriggered)
         {
-            if (ispaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
-            }
+            istriggered = true;
+            animator.SetTrigger("Show");
+            invPanel.GetComponent<Animator>().SetTrigger("invSelect");
         }
-      
+        else if (Input.GetKeyDown(KeyCode.Tab) && istriggered)
+
+        {
+            istriggered = false;
+            animator.SetTrigger("Hide");
+        }
     }
-    public void PauseGame()
+    public void ChangePanel(int panelnum)
     {
-        pauseScreen.SetActive(true);
-        Time.timeScale = 0f;
-        ispaused = true;
-    }
-    public void ResumeGame()
-    {
-        pauseScreen.SetActive(false);
-        Time.timeScale = 1f;
-        ispaused = false;
-    }
-    public void GOtoMainMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Title");
-    }
-    public void QuitGame()
-    {
-        Application.Quit();
+
+        if (panelnum == 3)
+        {
+            invPanel.GetComponent<RectTransform>().localScale.Set(1, 0, 1);
+            invPanel.transform.localScale.Set(1, 0, 1);
+            equipPanel.transform.localScale.Set(1, 0, 1);
+            questPanel.transform.localScale.Set(1, 1, 1);
+            Debug.Log("Changing to Quests");
+        }
+        else if (panelnum == 2)
+        {
+            invPanel.transform.localScale.Set(1, 0, 1);
+            equipPanel.transform.localScale.Set(1, 1, 1);
+            questPanel.transform.localScale.Set(1, 0, 1);
+            Debug.Log("Changing to Equipment");
+        }
+        else
+        {
+            invPanel.transform.localScale.Set(1, 1, 1);
+            equipPanel.transform.localScale.Set(1, 0, 1);
+            questPanel.transform.localScale.Set(1, 0, 1);
+            Debug.Log("Changing to Inventory");
+        }
     }
 }
 

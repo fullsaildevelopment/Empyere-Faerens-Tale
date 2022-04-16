@@ -7,10 +7,10 @@ using System.IO;
 public class gameController : MonoBehaviour
 {
  
-    /*//public User currentUser = new User();
+    //public User currentUser = new User();
 
     //public List<Equipment> equip = new List<Equipment>();
-  //  public List<Item> items = new List<Item>();
+    public List<Item> items = new List<Item>();
 
     public void Awake()
     {
@@ -19,14 +19,14 @@ public class gameController : MonoBehaviour
 
         //equiFiles = Directory.GetFiles("Equipment", "*.xml")
         itemFiles = Directory.GetFiles("Items", "*.xml");
-        //Serializer sz = new Serializer();
+        Serializer sz = new Serializer();
 
         //foreach(string str in equipFiles) {}
         foreach(string file in itemFiles)
         {
-           // Item item = new Item();
-            //sz.DeserializeItemFull(file, out item);
-           // items.Add(item);
+            Item item = new Item();
+            sz.DeserializeItemFull(file, out item);
+            items.Add(item);
         }
 
         //TODO: Change current scene managaement script. 
