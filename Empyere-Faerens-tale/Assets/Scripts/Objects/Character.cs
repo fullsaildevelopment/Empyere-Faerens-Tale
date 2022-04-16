@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.ComponentModel;
 using System.Net;
 using System.Collections.Generic;
@@ -147,4 +147,4 @@ public class Character : BaseObject
         Class = "Null";
         ElementalAffinity = "Null";
     }
-}
+}*/

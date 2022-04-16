@@ -18,6 +18,26 @@ public class Player : MonoBehaviour
     public int tmp;
     private Vector2 movedirection;
     public Rigidbody2D buff;
+
+    // :D Inventory for player!!!
+
+    public InventoryObject inventory;
+
+    // for pickups / inventory
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        var item = collision.GetComponent<Item>();
+        if (item)
+        {
+            inventory.AddItem(item.item, 1);
+            Destroy(collision.gameObject);
+        }
+    }
+    //clears the inventory 
+    private void OnApplicationQuit()
+    {
+        inventory.Container.Clear();
+    }
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();

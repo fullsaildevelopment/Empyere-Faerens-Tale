@@ -5,7 +5,7 @@ using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
 
-public class Serializer
+/*public class Serializer
 {
     public string filePath;
     private string lastSave = "lastSave.xml";
@@ -238,4 +238,4 @@ public class Serializer
 
         skill = sk;
     }
-}
+}*/
