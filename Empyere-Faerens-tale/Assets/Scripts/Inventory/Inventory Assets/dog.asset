@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721f704250a0c1b48a94e3514b3196d7, type: 3}
+  m_Name: dog
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4745935562368639430, guid: d2aed7e94cf743545a97f021c6629d1e, type: 3}
+  stackable: 0
+  type: 3
+  description: 'The village kid might be willing to give you something for finding
+    his dog '
+  data:
+    Name: Dog
+    Id: -1
+    buffs: []
