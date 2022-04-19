@@ -3,6 +3,7 @@
   <ObjectType>Equipment</ObjectType>
   <boost>14</boost>
   <boostType>Attack</boostType>
+  <equipType>Weapon</equipType>
   <Name>Steel Sword</Name>
   <price>0</price>
 </Equipment>

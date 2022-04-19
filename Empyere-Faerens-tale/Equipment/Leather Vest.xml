@@ -3,6 +3,7 @@
   <ObjectType>Equipment</ObjectType>
   <boost>4</boost>
   <boostType>Defense</boostType>
+  <equipType>Armor</equipType>
   <Name>Leather Vest</Name>
   <price>0</price>
 </Equipment>

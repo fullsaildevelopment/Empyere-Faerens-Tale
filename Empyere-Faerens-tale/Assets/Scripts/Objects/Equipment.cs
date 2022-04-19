@@ -1,5 +1,21 @@
 ﻿using System;
 
+public enum EquipType
+{
+    Armor,
+    Weapon,
+    None
+}
+public enum BoostType
+{
+    Attack,
+    Speed,
+    Magic,
+    Defense,
+    MagicDef,
+    None
+}
+
 public class Equipment : BaseObject
 {
     #region Members
@@ -9,7 +25,8 @@ public class Equipment : BaseObject
     public int boost;
 
     //This will be sourced from a dictionary in global namespace
-    public string boostType;
+    public BoostType boostType;
+    public EquipType equipType;
 
     public string Name;
     public int price;
@@ -28,12 +45,12 @@ public class Equipment : BaseObject
         boost = interger;
     }
 
-    public string GetBoostType()
+    public BoostType GetBoostType()
     {
         return boostType;
     }
 
-    public void SetBoostType(string type)
+    public void SetBoostType(BoostType type)
     {
         boostType = type;
     }
@@ -44,7 +61,8 @@ public class Equipment : BaseObject
     {
         ObjectType = Identiy.Equipment;
         boost = 0;
-        boostType = "Null";
+        boostType = BoostType.None;
+        equipType = EquipType.None;
         Name = "Null";
     }
 }

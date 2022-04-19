@@ -49,11 +49,33 @@ public class UI_Inventory : MonoBehaviour
     }
     public void UpdateUI()
     {
+        Dictionary<BaseObject,int> temp = new Dictionary<BaseObject,int>();
+        foreach(KeyValuePair<BaseObject,int> item in Items)
+        {
+            if(item.Key.ObjectType == Identiy.Item)
+                temp.Add(item.Key, item.Value);
+        }
         for(int i = 0; i < slots.Length; i++)
         {
-            if(i < Items.Count)
+            if(i < temp.Count)
             {
-                slots[i].addItem(Items.ElementAt(i).Key, Items.ElementAt(i).Value);
+                slots[i].addItem(temp.ElementAt(i).Key, temp.ElementAt(i).Value);
+            }
+        }
+    }
+    public void UpdateUIEquip()
+    {
+        Dictionary<BaseObject, int> temp = new Dictionary<BaseObject, int>();
+        foreach (KeyValuePair<BaseObject, int> item in Items)
+        {
+            if (item.Key.ObjectType == Identiy.Equipment)
+                temp.Add(item.Key, item.Value);
+        }
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (i < temp.Count)
+            {
+                slots[i].addItem(temp.ElementAt(i).Key, temp.ElementAt(i).Value);
             }
         }
     }

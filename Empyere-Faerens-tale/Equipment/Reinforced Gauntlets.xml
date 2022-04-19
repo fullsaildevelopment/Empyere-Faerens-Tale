@@ -3,6 +3,7 @@
   <ObjectType>Equipment</ObjectType>
   <boost>13</boost>
   <boostType>Defense</boostType>
+  <equipType>Armor</equipType>
   <Name>Reinforced Gauntlets</Name>
   <price>0</price>
 </Equipment>

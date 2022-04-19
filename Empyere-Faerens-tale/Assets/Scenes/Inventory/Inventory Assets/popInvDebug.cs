@@ -25,7 +25,7 @@ public class popInvDebug : MonoBehaviour
         e.ObjectType = Identiy.Equipment;
         e.Name = "Tester Equip";
         inv.ObjectList.Add(e);
-        SceneManager.LoadScene(11, LoadSceneMode.Single);
+        //SceneManager.LoadScene(11, LoadSceneMode.Single);
         #endregion
         
     }
