@@ -82,7 +82,21 @@ public class Player : MonoBehaviour
 
        
     }
+    //save and loading for the inventory :) 
+    private void Update()
+    {
+        /*if (Input.GetKeyDown(KeyCode.S))
+        {
+            inventory.Save();
+            Debug.Log("saving");
+        }
 
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            inventory.Load();
+            Debug.Log("loading");
+        }*/
+    }
    void Move()
     {
         buff.velocity = new Vector2(movedirection.x * PlayerSpeed, movedirection.y * PlayerSpeed);
@@ -93,12 +107,13 @@ public class Player : MonoBehaviour
     public void  SavePlayer()
     {
         SaveSystem.SavePlayer(this);
+        inventory.Save();
     }
     public void LoadPlayer()
     {
         PlayerData data = SaveSystem.LoadPlayer();
        Scene scene = SceneManager.GetActiveScene();
-
+        inventory.Load();
         Vector3 position;
         position.x = data.position[0];
         position.y = data.position[1];

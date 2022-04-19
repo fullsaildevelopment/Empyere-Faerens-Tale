@@ -19,5 +19,5 @@ MonoBehaviour:
     his dog '
   data:
     Name: Dog
-    Id: -1
+    Id: 0
     buffs: []
