@@ -1,12 +1,13 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Net;
+using UnityEngine;
 
 public class Character : BaseObject
 {
     #region Members
 
-    //public Identiy ObjectType;
+    //public Identity ObjectType;
     public int MaxHealth,
     CurrentHealth,
     Speed,
@@ -30,6 +31,9 @@ public class Character : BaseObject
 
     //Basic Attack Skill
     public Skill attack = new Skill(1);
+
+    //Sprite to be used in unity
+    [SerializeField] Sprite sprite;
 
     #endregion Members
 
@@ -129,7 +133,7 @@ public class Character : BaseObject
 
     public Character()
     {
-        ObjectType = Identiy.Character;
+        ObjectType = Identity.Character;
         MaxHealth = 0;
         CurrentHealth = 0;
         Speed = 0;

@@ -54,7 +54,7 @@ public class Skill : BaseObject
 
     public Skill()
     {
-        ObjectType = Identiy.Skill;
+        ObjectType = Identity.Skill;
         name = null;
         type = SkillType.None;
         damage = DamageType.None;
@@ -68,7 +68,7 @@ public class Skill : BaseObject
     {
         if (i == 1)
         {
-            ObjectType = Identiy.Skill;
+            ObjectType = Identity.Skill;
             name = "Attack";
             type = SkillType.Damage;
             target = SkillTarget.Single;

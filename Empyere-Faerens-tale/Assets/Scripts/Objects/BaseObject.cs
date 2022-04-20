@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Identiy
+public enum Identity
 {
     Character,
     Item,
@@ -14,7 +14,7 @@ public enum Identiy
 
 public class BaseObject
 {
-    public Identiy ObjectType;
+    public Identity ObjectType;
 
     public BaseObject()
     {

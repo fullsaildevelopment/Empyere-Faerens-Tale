@@ -30,7 +30,7 @@ public class Enemy : Character
 
     public Enemy()
     {
-        ObjectType = Identiy.Enemy;
+        ObjectType = Identity.Enemy;
         MaxHealth = 0;
         CurrentHealth = 0;
         Speed = 0;

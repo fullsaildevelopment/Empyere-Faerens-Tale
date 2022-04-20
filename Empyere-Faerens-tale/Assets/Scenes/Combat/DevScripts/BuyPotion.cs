@@ -9,7 +9,7 @@ public class BuyPotion : MonoBehaviour
     {
         potion.price = 10;
         potion.Name = "Potion";
-        potion.ObjectType = Identiy.Item;
+        potion.ObjectType = Identity.Item;
 
 
     }

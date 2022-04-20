@@ -20,7 +20,7 @@ public class Equipment : BaseObject
 {
     #region Members
 
-    //public Identiy ObjectType;
+    //public Identity ObjectType;
     //This will be used to add to character stats temporarily
     public int boost;
 
@@ -59,7 +59,7 @@ public class Equipment : BaseObject
 
     public Equipment()
     {
-        ObjectType = Identiy.Equipment;
+        ObjectType = Identity.Equipment;
         boost = 0;
         boostType = BoostType.None;
         equipType = EquipType.None;

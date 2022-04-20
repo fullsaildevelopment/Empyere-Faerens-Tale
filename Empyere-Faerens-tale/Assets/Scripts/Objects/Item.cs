@@ -8,7 +8,7 @@ public class Item : BaseObject
 {
 
     #region Members
-    //public Identiy ObjectType;
+    //public Identity ObjectType;
     public string Name;
     public string Type;
     //Points is a percent
@@ -42,7 +42,7 @@ public class Item : BaseObject
 
     public Item()
     {
-        ObjectType = Identiy.Item;
+        ObjectType = Identity.Item;
         Name = "null";
     }
 }
