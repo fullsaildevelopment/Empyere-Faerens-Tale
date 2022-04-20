@@ -5,7 +5,7 @@ using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
 
-/*public class Serializer
+public class Serializer
 {
     public string filePath;
     private string lastSave = "lastSave.xml";
@@ -95,7 +95,7 @@ using UnityEngine;
         character = Char;
     }
 
-    public void SerializeItem(Item item)
+    public void SerializeItem(ITEMS item)
     {
         string path = "Items/" + item.Name + ".xml";
 
@@ -113,31 +113,31 @@ using UnityEngine;
         sw.Close();
     }
 
-    public void DeserializeItem(string itemName, out Item item)
+    public void DeserializeItem(string itemName, out ITEMS item)
     {
         string path = "Items/" + itemName + ".xml";
 
         StreamReader sr = new StreamReader(path);
 
-        Item obj = new Item();
+        ITEMS obj = new ITEMS();
 
         System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(obj.GetType());
-        obj = (Item)x.Deserialize(sr);
+        obj = (ITEMS)x.Deserialize(sr);
         sr.Close();
 
         item = obj;
     }
 
-    public void DeserializeItemFull(string itemName, out Item item)
+    public void DeserializeItemFull(string itemName, out ITEMS item)
     {
         string path = itemName;
 
         StreamReader sr = new StreamReader(path);
 
-        Item obj = new Item();
+        ITEMS obj = new ITEMS();
 
         System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(obj.GetType());
-        obj = (Item)x.Deserialize(sr);
+        obj = (ITEMS)x.Deserialize(sr);
         sr.Close();
 
         item = obj;
@@ -238,4 +238,4 @@ using UnityEngine;
 
         skill = sk;
     }
-}*/
+}

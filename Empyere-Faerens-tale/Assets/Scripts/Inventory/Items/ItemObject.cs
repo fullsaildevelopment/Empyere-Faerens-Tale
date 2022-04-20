@@ -10,9 +10,30 @@ public enum ItemType
     sidequestitem,
     money
 }
-
+public enum Skills
+{
+    Bless,
+    Cleave,
+    CrossSlash,
+    Earth,
+    Example,
+    FireStorm,
+    Fire,
+    FirstAid,
+    Flare,
+    Flood,
+    Freeze,
+    Ice,
+    Pierce,
+    Rumble,
+    Slash,
+    Water,
+    WhiteWind
+}
 public enum Attributes
 {
+    
+    Attack,
     Agility,
     Intellect,
     Stamina,

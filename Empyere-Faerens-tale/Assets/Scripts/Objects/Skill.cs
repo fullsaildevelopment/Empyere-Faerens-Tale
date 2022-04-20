@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -81,7 +81,7 @@ public class Skill : BaseObject
     }
     public void AttachSkill(Character c)
     {
-        if(c.Statuses.ContainsKey(this) == true && c.Statuses[this] < 3)
+        if (c.Statuses.ContainsKey(this) == true && c.Statuses[this] < 3)
         {
             c.Statuses[this]++;
         }
@@ -97,4 +97,3 @@ public class Skill : BaseObject
     #endregion
 
 }
-*/
