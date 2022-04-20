@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class slotButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] public GameObject go;
+    public BaseObject item;
+    public void slotClick()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        go.SetActive(true);
+        go.GetComponent<itemContainer>().item = item as Item;
     }
 }

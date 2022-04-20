@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Net;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Character : BaseObject
 {
@@ -15,6 +16,7 @@ public class Character : BaseObject
     Defense,
     //This doubles as mana count and strength
     Magic,
+    CurrentMagic,
     MagicDefense;
 
     public string Name;
@@ -31,6 +33,7 @@ public class Character : BaseObject
 
     //Basic Attack Skill
     public Skill attack = new Skill(1);
+    public List<Skill> skillList = new List<Skill>();
 
     //Sprite to be used in unity
     [SerializeField] Sprite sprite;
@@ -136,6 +139,7 @@ public class Character : BaseObject
         ObjectType = Identity.Character;
         MaxHealth = 0;
         CurrentHealth = 0;
+        CurrentMagic = 0;
         Speed = 0;
         Attack = 0;
         Defense = 0;

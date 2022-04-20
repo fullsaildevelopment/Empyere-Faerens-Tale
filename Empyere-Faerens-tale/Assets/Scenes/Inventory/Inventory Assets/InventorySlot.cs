@@ -46,6 +46,7 @@ public class InventorySlot : MonoBehaviour
     public void enableButton()
     {
         itembutton = gameObject.transform.GetChild(4).gameObject;
+        itembutton.GetComponent<slotButton>().item = item;
         itembutton.SetActive(true);
     }
     public void ClearSlot()

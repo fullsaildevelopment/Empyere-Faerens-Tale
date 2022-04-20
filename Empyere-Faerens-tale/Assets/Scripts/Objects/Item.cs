@@ -4,13 +4,25 @@ using System.Collections.Generic;
 using System.Dynamic;
 using UnityEngine;
 
+public enum ItemType
+{
+    Heal,
+    Mana,
+    Full,
+    HealParty,
+    ManaParty,
+    FullParty,
+    Damage,
+    DamageParty,
+    None
+}
 public class Item : BaseObject
 {
 
     #region Members
     //public Identity ObjectType;
     public string Name;
-    public string Type;
+    public ItemType Type;
     //Points is a percent
     public float Points;
     public int price;
@@ -18,12 +30,12 @@ public class Item : BaseObject
 
     #region Getters Setters
 
-    public string GetTypeA()
+    public ItemType GetTypeA()
     {
         return Type;
     }
 
-    public void SetType(string type)
+    public void SetType(ItemType type)
     {
         Type = type;
     }
@@ -44,5 +56,6 @@ public class Item : BaseObject
     {
         ObjectType = Identity.Item;
         Name = "null";
+        Type = ItemType.None;
     }
 }
