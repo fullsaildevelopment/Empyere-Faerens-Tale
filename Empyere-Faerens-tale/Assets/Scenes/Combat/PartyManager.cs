@@ -17,4 +17,14 @@ public class PartyManager : MonoBehaviour
             i++;
         }
     }
+
+    public void update()
+    {
+        int i = 0;
+        foreach (Character c in party.active_characters)
+        {
+            characterManagerArr[i].update();
+            i++;
+        }
+    }
 }
