@@ -8,9 +8,9 @@ public class User
     #region Members
 
     public string Name;
-    /*public List<Character> characters = new List<Character>();
+    public Party party = new Party();
     public List<Item> items = new List<Item>();
-    public List<Equipment> equipment = new List<Equipment>();*/
+    public List<Equipment> equipment = new List<Equipment>();
     public Inventory inventory = new Inventory();
     public int currency = 0;
 

@@ -94,6 +94,38 @@ public class Serializer
 
         character = Char;
     }
+    public void SerializeEnemy(Enemy character)
+    {
+        string path = "Enemies/" + character.Name + ".xml";
+
+        StreamWriter sw = new StreamWriter(path);
+
+        System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(character.GetType());
+        x.Serialize(sw, character);
+
+        sw.Close();
+        sw = new StreamWriter(path);
+
+        System.Xml.Serialization.XmlSerializer y = new System.Xml.Serialization.XmlSerializer(character.GetType());
+        y.Serialize(sw, character);
+
+        sw.Close();
+    }
+
+    public void DeserializeEnemy(string characterName, out Enemy character)
+    {
+        string path = "Enemies/" + characterName + ".xml";
+
+        StreamReader sr = new StreamReader(path);
+
+        Enemy Char = new Enemy();
+
+        System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(Char.GetType());
+        Char = (Enemy)x.Deserialize(sr);
+        sr.Close();
+
+        character = Char;
+    }
 
     public void SerializeItem(Item item)
     {

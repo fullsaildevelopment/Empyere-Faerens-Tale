@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Character character;
+    [SerializeField] public GameObject CharacterStatus;
 
-    // Update is called once per frame
-    void Update()
+    public void update()
     {
-        
+        if (character.Name != "Null")
+        {
+            this.gameObject.GetComponent<Image>().sprite = character.sprite;
+        }
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
+
+        CharacterStatus.GetComponent<StatusManager>().update();
     }
 }

@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StatusManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] public CharacterManager cm;
+    [SerializeField] public Text Name;
+    [SerializeField] public Text Health;
+    [SerializeField] public GameObject HealthBar;
+    [SerializeField] public Text Mana;
+    [SerializeField] public GameObject ManaBar;
 
-    // Update is called once per frame
-    void Update()
+    Character character;
+
+    public void update()
     {
+        character = cm.character;
+        Name.text = character.Name;
         
     }
 }

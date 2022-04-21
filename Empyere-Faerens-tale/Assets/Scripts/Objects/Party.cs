@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Party : MonoBehaviour
+public class Party
 {
     //Contains the 3 Active characters
     public Character[] active_characters = new Character[3];

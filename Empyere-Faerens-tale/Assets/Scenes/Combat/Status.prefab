@@ -92,6 +92,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89541159b213c354d976a2be316b6a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cm: {fileID: 0}
+  Name: {fileID: 4494004667053732214}
+  Health: {fileID: 8138665997114898913}
+  HealthBar: {fileID: 4120204111290092520}
+  Mana: {fileID: 3369847561439585580}
+  ManaBar: {fileID: 2933039075782703971}
 --- !u!1 &1419833725473275313
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +110,7 @@ GameObject:
   - component: {fileID: 1566905113882353445}
   - component: {fileID: 4701848777336372501}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Statuses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

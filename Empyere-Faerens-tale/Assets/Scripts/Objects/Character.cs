@@ -36,7 +36,7 @@ public class Character : BaseObject
     public List<Skill> skillList = new List<Skill>();
 
     //Sprite to be used in unity
-    [SerializeField] Sprite sprite;
+    [SerializeField] public Sprite sprite;
 
     #endregion Members
 

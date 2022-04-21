@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PartyManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Party party;
+    [SerializeField] private CharacterManager[] characterManagerArr;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        int i = 0;
+        foreach (Character c in party.active_characters)
+        {
+            characterManagerArr[i].character = c;
+            characterManagerArr[i].update();
+
+            Debug.Log(characterManagerArr[i].character.Name);
+            i++;
+        }
     }
 }
