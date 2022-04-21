@@ -1,9 +1,15 @@
 using UnityEngine;
 
+public enum PCNPC
+{
+    PC,
+    NPC
+}
 public class PartyManager : MonoBehaviour
 {
     public Party party;
     [SerializeField] private CharacterManager[] characterManagerArr;
+    [SerializeField] public PCNPC PcNpc;
 
     private void Awake()
     {
@@ -23,6 +29,14 @@ public class PartyManager : MonoBehaviour
         int i = 0;
         foreach (Character c in party.active_characters)
         {
+            if(PcNpc == PCNPC.PC)
+            {
+                characterManagerArr[i].character = GameObject.Find("BattleManager").GetComponent<BattleHeart>().allypartyManager.party.active_characters[i];
+            }
+            if(PcNpc == PCNPC.NPC)
+            {
+                characterManagerArr[i].character = GameObject.Find("BattleManager").GetComponent<BattleHeart>().allypartyManager.party.active_characters[i];
+            }
             characterManagerArr[i].update();
             i++;
         }
