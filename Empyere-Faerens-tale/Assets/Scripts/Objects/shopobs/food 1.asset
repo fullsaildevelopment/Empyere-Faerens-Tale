@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240dfb1d489d0d74ca203c724a1f383c, type: 3}
   m_Name: food 1
   m_EditorClassIdentifier: 
-  title: apple
-  description: of your eye
+  prefab: {fileID: 3725310435231559485, guid: 21fbe8c89cfec124a8b956756b6d25d7, type: 3}
+  title: potion
+  description: 'best potion ever '
   baseCost: 3
   maxLv: 0

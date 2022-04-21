@@ -71,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -719641905
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8340130823153958410, guid: 199a5f97807f14f45a1a3263b67a9cee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c104047b7c779843933ba8029df8d4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  chest_0: {fileID: -9037411367760340442, guid: 199a5f97807f14f45a1a3263b67a9cee, type: 3}
+  chest_0: {fileID: 21300000, guid: d6ad9964ec6a7e04aa0f76e9654d5c7c, type: 3}
   money: 10
 --- !u!61 &8733039699052110633
 BoxCollider2D:
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 0.37, y: 0.22}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

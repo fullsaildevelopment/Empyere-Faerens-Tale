@@ -12,7 +12,7 @@ public class ShopManager : MonoBehaviour
     public GameObject[] shopPanelsGO;
     public ShopPanel[] shopPanels;
     public Button[] myPurchaseBtns;
-
+    public ItemObject item;
     // Start is called before the first frame update
     void Start()
     {
