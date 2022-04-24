@@ -23,12 +23,12 @@ public class Health : MonoBehaviour
             //player died :(
         }
     }
-   /* private void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
             TakeDamage(1);
         }
     }
-   */
+   
 }
