@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public Animator animator;
     [SerializeField] public float typingSpeed = .0100f;
+    public bool isDone;
     float original;
     bool toggle = false;
     // Start is called before the first frame update
@@ -47,6 +48,7 @@ public class DialogueManager : MonoBehaviour
 
             animator.SetBool("isOpen", true);
             nameText.text = dialogue.name;
+            isDone = false;
 
             sentences.Clear();
             foreach (string sentence in dialogue.sentences)
@@ -97,6 +99,7 @@ public class DialogueManager : MonoBehaviour
                 animator.SetBool("isOpen",false);
 
         Debug.Log("Conversation Over");
+        isDone = true;
         //Time.timeScale = 1;
     }
 
