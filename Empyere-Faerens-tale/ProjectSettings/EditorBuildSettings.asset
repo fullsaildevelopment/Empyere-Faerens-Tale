@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/dev.unity
     guid: 2d6c39982a9678b41a33ca4078de17b2
+  - enabled: 1
+    path: Assets/Scenes/PathtoGargantura.unity
+    guid: 383841ebb96f364498ff1408792743ee
   m_configObjects: {}

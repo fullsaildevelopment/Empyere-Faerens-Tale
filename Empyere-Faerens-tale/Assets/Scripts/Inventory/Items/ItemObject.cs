@@ -10,6 +10,8 @@ public enum ItemType
     sidequestitem,
     money
 }
+
+
 public enum Skills
 {
     Bless,
@@ -40,6 +42,7 @@ public enum Attributes
     Strength,
     Mana
 }
+
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory System/Items/item")]
 public class ItemObject : ScriptableObject
 {
@@ -51,11 +54,15 @@ public class ItemObject : ScriptableObject
     public string description;
     public Items data = new Items();
 
+
+
     public Items CreateItem()
     {
         Items newItem = new Items(this);
         return newItem;
     }
+    
+
 
 
 }
@@ -66,6 +73,7 @@ public class Items
     public string Name;
     public int Id = -1;
     public ItemBuff[] buffs;
+    
     public Items()
     {
         Name = "";
@@ -76,6 +84,7 @@ public class Items
         Name = item.name;
         Id = item.data.Id;
         buffs = new ItemBuff[item.data.buffs.Length];
+        
         for (int i = 0; i < buffs.Length; i++)
         {
             buffs[i] = new ItemBuff(item.data.buffs[i].min, item.data.buffs[i].max)
@@ -84,6 +93,9 @@ public class Items
             };
         }
     }
+   
+
+
 }
 
 [System.Serializable]
