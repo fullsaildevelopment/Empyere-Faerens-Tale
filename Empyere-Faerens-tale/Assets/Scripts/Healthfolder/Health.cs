@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float startingHealth;
+    [SerializeField] 
+    public float startingHealth;
     public float currentHealth { get; private set; }
+    
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -23,12 +26,14 @@ public class Health : MonoBehaviour
             //player died :(
         }
     }
+   
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
             TakeDamage(1);
         }
+       
     }
    
 }
