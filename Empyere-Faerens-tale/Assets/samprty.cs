@@ -8,7 +8,7 @@ public class samprty : MonoBehaviour
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
-    public Animator enemyanim;
+    public Animator samanim;
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +27,8 @@ public class samprty : MonoBehaviour
     {
         //enemy is tracking the player  and moves in on them ! 
         Vector3 direction = player.position - transform.position;
-        /* float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-         rb.rotation = angle;*/
+         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+         rb.rotation = angle;
         direction.Normalize();
         movement = direction;
 
@@ -43,8 +43,8 @@ public class samprty : MonoBehaviour
             transform.localScale = new Vector3(15, 15, 1);
 
         //changing the enemy animations :P
-        enemyanim.SetFloat("enemyspeed", Mathf.Abs(x));
-        enemyanim.SetFloat("enemyvert", Mathf.Abs(y));
+        samanim.SetFloat("prtymve", Mathf.Abs(x));
+        samanim.SetFloat("prtymve", Mathf.Abs(y));
 
         moveCharacter(movement);
 
