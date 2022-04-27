@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 public class ShopManager : MonoBehaviour
 {
     public static ShopManager instance;
@@ -11,9 +13,9 @@ public class ShopManager : MonoBehaviour
     public GameObject shopUI;
     public Transform shopContent;
     public GameObject itemPrefab;
-   //calling the player and the health for the shop :D
     public Player player;
     public Health health;
+    
     private void Awake()
     {
         if (instance == null)
@@ -70,8 +72,12 @@ public class ShopManager : MonoBehaviour
             upgrade.quantity++;
             upgrade.itemRef.transform.GetChild(0).GetComponent<Text>().text = upgrade.quantity.ToString();
             ApplyUpgrade(upgrade);
-            
+
+            //connecting to currency in user 
+           
         }
+       /* Debug.Log($"{GameObject.Find("GameController").GetComponent<GameUser>().user.currency} " +
+               $"should equal {GameObject.Find(ShopManager).GetComponent<shopm>() shop.coins}";*/
     }
     public void ApplyUpgrade(Upgrade upgrade)
     {
@@ -80,9 +86,17 @@ public class ShopManager : MonoBehaviour
             case "Speed":
                 player.PlayerSpeed += 2f;
                 break;
+
+           /* case  "potion":
+                health.startingHealth = 1 ;
+                break;
+
             default:
                 Debug.Log("No upgrade avail :(");
                 break;
+           */
+
+            
         }
        
     }
