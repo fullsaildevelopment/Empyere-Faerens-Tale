@@ -13,14 +13,29 @@ public class BattleMenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene(12, LoadSceneMode.Single);
     }
+    public void targetAttack()
+    {
+        BattleHeart go = GameObject.Find("BattleManager").GetComponent<BattleHeart>();
+        GameObject.Find("TargetSelector").GetComponent<SelectorParent>().activate(true);
+        //GameObject.Find("TargetSelector").GetComponent<SelectorParent>().TargetList = go.enemypartyManager.party.active_characters;
+        GameObject.Find("TargetSelector").GetComponent<SelectorParent>().setskill(go.BattleOrder[go.counter].Key.attack);
+        GameObject.Find("BattleManager").GetComponent<BattleHeart>().SetButtons(false);
+
+
+    }
+    public void Skill()
+    {
+        skillSelect go = GameObject.Find("SkillSelector").GetComponent<skillSelect>();
+
+    }
     public void attack()
     {
         BattleHeart go = GameObject.Find("BattleManager").GetComponent<BattleHeart>();
-        go.enemypartyManager.party.active_characters[pickranomenemy()].CurrentHealth -= (int)(go.allypartyManager.party.active_characters[0].attack.modifier * go.BattleOrder[go.counter].Key.Attack + 5);
+        go.enemypartyManager.party.active_characters[pickranomenemy()].CurrentHealth -= (int)(go.BattleOrder[go.counter].Key.attack.modifier * go.BattleOrder[go.counter].Key.Attack + 5);
+        Debug.Log(go.BattleOrder[go.counter].Key.Name);
         go.cont = true;
         go.enemypartyManager.update();
         GameObject.Find("BattleManager").GetComponent<BattleHeart>().SetButtons(false);
-        GameObject.Find("BattleManager").GetComponent<BattleHeart>().heartbeat();
     }
     public void nextTurn()
     {

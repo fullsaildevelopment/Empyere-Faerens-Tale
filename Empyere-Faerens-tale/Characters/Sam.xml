@@ -4,7 +4,7 @@
   <MaxHealth>250</MaxHealth>
   <CurrentHealth>250</CurrentHealth>
   <Speed>10</Speed>
-  <Attack>10</Attack>
+  <Attack>20</Attack>
   <Defense>30</Defense>
   <Magic>30</Magic>
   <CurrentMagic>30</CurrentMagic>

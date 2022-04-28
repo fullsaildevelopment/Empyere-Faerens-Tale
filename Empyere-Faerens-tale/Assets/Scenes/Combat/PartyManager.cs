@@ -43,7 +43,7 @@ public class PartyManager : MonoBehaviour
     }
     public void attack(Character target, Character caster)
     {
-        Debug.Log("Attacking");
+        //Debug.Log("Attacking");
         target.CurrentHealth -= (int)caster.attack.modifier * caster.Attack;
         //GameObject.Find("BattleManager").GetComponent<BattleHeart>().heartbeat();
 

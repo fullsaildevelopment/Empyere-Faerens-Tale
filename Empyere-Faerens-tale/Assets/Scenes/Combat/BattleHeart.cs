@@ -12,6 +12,7 @@ public class BattleHeart : MonoBehaviour
     Party npcparty = new Party();
 
     bool battleEnd = false;
+    bool battleWon;
 
     [SerializeField] public PartyManager allypartyManager;
     [SerializeField] public PartyManager enemypartyManager;
@@ -29,10 +30,12 @@ public class BattleHeart : MonoBehaviour
     public bool cont = false;
     int turnCounter = 0;
     public int counter = 0;
+    bool firstTurn = true;
 
     
     private void Awake()
     {
+        GameObject.Find("TargetSelector").GetComponent<SelectorParent>().setbuttons(false);
         user = GameObject.Find("GameController").GetComponent<GameUser>().user;
         pcparty = user.party;
         int j = 0;
@@ -69,13 +72,14 @@ public class BattleHeart : MonoBehaviour
         int i = 0;
         foreach(KeyValuePair<Character, int> pair in BattleOrder.ToList())
         {
-            BattleOrder[i] = new KeyValuePair<Character,int>(BattleOrder[i].Key, rnd.Next(0, pair.Key.Speed));
+            BattleOrder[i] = new KeyValuePair<Character,int>(BattleOrder[i].Key, rnd.Next(0, pair.Key.Speed+1));
         }
         Debug.Log("BattleOrder Val Update");
 
-        BattleOrder.Sort((x, y) => x.Value.CompareTo(y.Value)); 
+        BattleOrder.Sort((x, y) => y.Value.CompareTo(x.Value)); 
         foreach(KeyValuePair<Character, int> kvp in BattleOrder)
         {
+            Debug.Log(kvp.Key.Name);
             Debug.Log(kvp.Value);
         }
         Debug.Log("BattleOrder updated");
@@ -86,16 +90,41 @@ public class BattleHeart : MonoBehaviour
     }
     public void heartbeat()
     {
-        Debug.Log(counter);
-        //Debug.Log(turnCounter);
-        if(!battleEnd)
         {
-            if(isPC(BattleOrder[counter].Key))
+            if (firstTurn)
+            { firstTurn = false; }
+            else if (counter >= BattleOrder.Count() - 1)
+            {
+                counter = 0;
+                Debug.Log("Counter reset " + counter);
+                turnCounter++;
+
+            }
+            else
+            {
+                counter++;
+                turnCounter++;
+
+            }
+        }
+
+        //Debug.Log(counter);
+        Debug.Log($"Turn: {turnCounter} Current Battle Order {counter}");
+        Debug.Log($"Current: {BattleOrder[counter].Key.Name}");
+
+        //Debug.Log(turnCounter);
+        if (!battleEnd)
+        {
+            if(isPC(BattleOrder[counter].Key) && BattleOrder[counter].Key.CurrentHealth > 0)
             {
                 SetButtons(true);
 
 
                 Debug.Log("PC");
+            }
+            else if(BattleOrder[counter].Key.CurrentHealth <= 0 && !isPC(BattleOrder[counter].Key))
+            {
+
             }
             
             else
@@ -110,28 +139,30 @@ public class BattleHeart : MonoBehaviour
                 //SetButtons(true);
 
             }
-            if (counter >= BattleOrder.Count()-1)
-            {
-                counter = 0;
-                Debug.Log("Counter reset " + counter);
-            }
-            else
-            {
-                counter++;
-            }
+            
             updateAll();
-            turnCounter++;
-            Debug.Log($"Turn: {turnCounter} Current Battle Order {counter}");
-
-            /*if (BattleOrder[counter + 1].Key.Name == allypartyManager.party.active_characters[0].Name ||
-                BattleOrder[counter + 1].Key.Name == allypartyManager.party.active_characters[1].Name ||
-                BattleOrder[counter + 1].Key.Name == allypartyManager.party.active_characters[2].Name)*/
-            
-            
-
-            //heartbeat();
-            /*battleEnd = true;
-            heartbeat();*/
+            int enemyDown = 0;
+            int allyDown = 0;
+            foreach(Character c in enemypartyManager.party.active_characters)
+            {
+                if(c.CurrentHealth<= 0)
+                    enemyDown++;
+            }
+            foreach(Character c in allypartyManager.party.active_characters)
+            {
+                if(c.CurrentHealth <= 0)
+                    allyDown++;
+            }
+            if(enemyDown == 3)
+            {
+                battleEnd = true;
+                battleWon = true;
+            }
+            if(allyDown == 3)
+            {
+                battleEnd = true;
+                battleWon = false;
+            }
 
         }
 
