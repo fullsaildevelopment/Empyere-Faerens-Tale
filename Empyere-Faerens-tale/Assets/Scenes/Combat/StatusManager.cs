@@ -12,12 +12,15 @@ public class StatusManager : MonoBehaviour
     [SerializeField] public Text Mana;
     [SerializeField] public GameObject ManaBar;
     [SerializeField] public Text Statuses;
-    float HTBRatio;
+    /*float HTBRatio;
     float MTBRatio;
-    float barMaxWidth;
+    float barMaxWidth;*/
     bool firstStep = false;
 
     Character character;
+    public Slider HealthSlide;
+    public Slider ManaSlide;
+
 
     public void update()
     {
@@ -26,20 +29,15 @@ public class StatusManager : MonoBehaviour
         if (character.Name == "Null")
             this.gameObject.SetActive(false);
         Name.text = character.Name;
-        if (!firstStep)
+        if (!firstStep && character.Name != "Null")
             firststep();
-
-        float missingHp = character.MaxHealth - character.CurrentHealth;
-        float missingMp = character.Magic - character.CurrentMagic;
-
-        /*Rect rect = HealthBar.GetComponent<RectTransform>().rect;
-        HealthBar.GetComponent<Image>().sprite.rect.Set(rect.x, rect.y, barMaxWidth - (HTBRatio * missingHp), rect.height);
-        HealthBar.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, barMaxWidth - (HTBRatio * missingHp));
-        
-        rect = ManaBar.GetComponent<Image>().sprite.rect;
-        ManaBar.GetComponent<Image>().sprite.rect.Set(rect.x, rect.y, barMaxWidth - (MTBRatio * missingMp), rect.height);*/
-        Health.text = overunder(character.CurrentHealth.ToString(), character.MaxHealth.ToString());
-        Mana.text = overunder(character.CurrentMagic.ToString(), character.Magic.ToString());
+        if (character.Name != "Null")
+        {
+            Health.text = overunder(character.CurrentHealth.ToString(), character.MaxHealth.ToString());
+            Mana.text = overunder(character.CurrentMagic.ToString(), character.Magic.ToString());
+            HealthSlide.value = character.CurrentHealth;
+            ManaSlide.value = character.CurrentMagic;
+        }
 
 
 
@@ -53,12 +51,14 @@ public class StatusManager : MonoBehaviour
     }
     public void firststep()
     {
-        float HPBWidth = HealthBar.GetComponent<Image>().sprite.rect.width;
-        barMaxWidth = HPBWidth;
 
-        HTBRatio = barMaxWidth / character.MaxHealth;
-        MTBRatio = barMaxWidth / character.Magic;
-        firstStep = true;
+        //HealthSlide = HealthBar.GetComponent<Slider>();
+        HealthSlide.maxValue = character.MaxHealth;
+        HealthSlide.value = character.CurrentHealth;
 
+
+        //ManaSlide = ManaBar.GetComponent<Slider>();
+        ManaSlide.maxValue = character.Magic;
+        ManaSlide.value = character.CurrentMagic;
     }
 }

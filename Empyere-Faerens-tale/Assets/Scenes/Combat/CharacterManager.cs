@@ -21,4 +21,5 @@ public class CharacterManager : MonoBehaviour
 
         CharacterStatus.GetComponent<StatusManager>().update();
     }
+    
 }

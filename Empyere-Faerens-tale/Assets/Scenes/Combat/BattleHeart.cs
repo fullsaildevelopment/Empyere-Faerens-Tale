@@ -9,7 +9,7 @@ public class BattleHeart : MonoBehaviour
 {
     User user;
     Party pcparty = new Party();
-    Party npcparty;
+    Party npcparty = new Party();
 
     bool battleEnd = false;
 
@@ -21,6 +21,7 @@ public class BattleHeart : MonoBehaviour
     [SerializeField] public GameObject SwapWep;
     [SerializeField] public GameObject SwapArmor;
     [SerializeField] public GameObject Escape;
+    [SerializeField] public GameObject NextTurn;
 
     public List<KeyValuePair<Character, int>> BattleOrder = new List<KeyValuePair<Character, int>>();
 
@@ -34,7 +35,12 @@ public class BattleHeart : MonoBehaviour
     {
         user = GameObject.Find("GameController").GetComponent<GameUser>().user;
         pcparty = user.party;
-        npcparty = GameObject.Find("GameController").GetComponent<EnemyGenLists>().generatedEnemies;
+        int j = 0;
+        foreach(Character c in npcparty.active_characters)
+        {
+            npcparty.active_characters[j] = GameObject.Find("GameController").GetComponent<EnemyGenLists>().generatedEnemies.active_characters[j];
+            j++;
+        }
 
         allypartyManager.party = pcparty;
         enemypartyManager.party = npcparty;
@@ -75,47 +81,55 @@ public class BattleHeart : MonoBehaviour
         Debug.Log("BattleOrder updated");
         SetButtons(false);
 
-        heartbeat();
+        //heartbeat();
 
     }
     public void heartbeat()
     {
-        Thread.Sleep(40);
         Debug.Log(counter);
         //Debug.Log(turnCounter);
         if(!battleEnd)
         {
             if(isPC(BattleOrder[counter].Key))
             {
-                //SetButtons(true);
-                for(int i = 0; i < 20; i++)
-                {
-                    if (cont)
-                        break;
-                    Thread.Sleep(500);
-                }
-                cont = false;
+                SetButtons(true);
+
+
                 Debug.Log("PC");
             }
             
             else
             {
+                SetButtons(false);
                 int j = pickranomally();
-                Skill attack = BattleOrder[counter].Key.attack;
-                pcparty.active_characters[j].CurrentHealth -= (int)(attack.modifier * BattleOrder[counter].Key.Attack);
+                /*Skill attack = BattleOrder[counter].Key.attack;
+                pcparty.active_characters[j].CurrentHealth -= (int)(attack.modifier * BattleOrder[counter].Key.Attack);*/
+                enemypartyManager.attack(allypartyManager.party.active_characters[j], BattleOrder[counter].Key);
+                Debug.Log("NPC");
+
+                //SetButtons(true);
+
             }
-            Debug.Log("NPC");
-            if(counter == 5)
+            if (counter >= BattleOrder.Count()-1)
             {
                 counter = 0;
                 Debug.Log("Counter reset " + counter);
             }
-            counter++;
-            turnCounter++;
+            else
+            {
+                counter++;
+            }
             updateAll();
-            if (turnCounter < 6)
-                Debug.Log("Before beat " + turnCounter);
-            heartbeat();
+            turnCounter++;
+            Debug.Log($"Turn: {turnCounter} Current Battle Order {counter}");
+
+            /*if (BattleOrder[counter + 1].Key.Name == allypartyManager.party.active_characters[0].Name ||
+                BattleOrder[counter + 1].Key.Name == allypartyManager.party.active_characters[1].Name ||
+                BattleOrder[counter + 1].Key.Name == allypartyManager.party.active_characters[2].Name)*/
+            
+            
+
+            //heartbeat();
             /*battleEnd = true;
             heartbeat();*/
 
@@ -130,6 +144,7 @@ public class BattleHeart : MonoBehaviour
         Item.SetActive(flag);
         SwapWep.SetActive(flag);
         SwapArmor.SetActive(flag);
+        NextTurn.SetActive(!flag);
         //Disabled for dev purposes
         //Escape.SetActive(flag);
     }
@@ -148,7 +163,8 @@ public class BattleHeart : MonoBehaviour
     public int pickranomally()
     {
         System.Random random = new System.Random();
-        return random.Next(0, 1);
+        //heartbeat();
+        return random.Next(0, 2);
     }
     
     public void updateAll()

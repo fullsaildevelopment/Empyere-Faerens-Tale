@@ -3,6 +3,6 @@
   <ObjectType>Item</ObjectType>
   <Name>Ether</Name>
   <Type>Mana</Type>
-  <Points>35</Points>
+  <Points>0.35</Points>
   <price>15</price>
 </Item>

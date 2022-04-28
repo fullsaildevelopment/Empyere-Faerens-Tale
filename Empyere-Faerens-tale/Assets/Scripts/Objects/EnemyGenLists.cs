@@ -18,19 +18,27 @@ public class EnemyGenLists : MonoBehaviour
     public void GenerateCombat()
     {
         GameObject.Find("GameController").GetComponent<EnemyGenLists>().location = location;
+        Party p = new Party();
+        
         switch(location)
         {
             case Location.Plains:
                 plains = GameObject.Find("GameController").GetComponent<EnemyGenLists>().plains;
                 System.Random random = new System.Random();
                 int i = 0;
-                foreach(Character cha in generatedEnemies.active_characters)
+                Serializer serializer = new Serializer();
+                foreach(Character cha in p.active_characters)
                 {
-                    generatedEnemies.active_characters[i] = plains[random.Next(0, plains.Count)];
+                    Enemy c = new Enemy();
+                    int a = random.Next(0, plains.Count);
+                    serializer.DeserializeEnemy(plains[a].Name, out c);
+                    c.sprite = plains[a].sprite;
+
+                    p.active_characters[i] = c;
                     i++;
-                    Debug.Log(random.Next(0, plains.Count));
+                    //Debug.Log(random.Next(0, plains.Count));
                 }
-                GameObject.Find("GameController").GetComponent<EnemyGenLists>().generatedEnemies = generatedEnemies;
+                GameObject.Find("GameController").GetComponent<EnemyGenLists>().generatedEnemies = p;
                 break;
             default:
                 Debug.LogError("GenerateCombat Broke. EnemyGenLists.cs Switch(location)");

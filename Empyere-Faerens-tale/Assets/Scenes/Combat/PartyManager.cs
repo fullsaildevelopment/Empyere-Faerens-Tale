@@ -19,7 +19,7 @@ public class PartyManager : MonoBehaviour
             characterManagerArr[i].character = c;
             characterManagerArr[i].update();
 
-            Debug.Log(characterManagerArr[i].character.Name);
+            //Debug.Log(characterManagerArr[i].character.Name);
             i++;
         }
     }
@@ -35,10 +35,17 @@ public class PartyManager : MonoBehaviour
             }
             if(PcNpc == PCNPC.NPC)
             {
-                characterManagerArr[i].character = GameObject.Find("BattleManager").GetComponent<BattleHeart>().allypartyManager.party.active_characters[i];
+                characterManagerArr[i].character = GameObject.Find("BattleManager").GetComponent<BattleHeart>().enemypartyManager.party.active_characters[i];
             }
             characterManagerArr[i].update();
             i++;
         }
+    }
+    public void attack(Character target, Character caster)
+    {
+        Debug.Log("Attacking");
+        target.CurrentHealth -= (int)caster.attack.modifier * caster.Attack;
+        //GameObject.Find("BattleManager").GetComponent<BattleHeart>().heartbeat();
+
     }
 }
