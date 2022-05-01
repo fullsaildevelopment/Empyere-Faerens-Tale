@@ -42,8 +42,11 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("Chrmenu");
     }
-    //goes from shop to take you back to the village 
-
+    public void GotoCastle()
+    {
+        SceneManager.LoadScene("innercastle");
+    }
+   
    
     //these are the buttons from the main menu options to return to main
    //back button
@@ -51,13 +54,7 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("Title");
     }
-    public void GotoSell()//how to get to sell 
-    {
-        SceneManager.LoadScene("sell");
-    }
-    public void GotoShop()//how to get to shop 
-    {
-        SceneManager.LoadScene("shop1");
-    }
+   
+    
 }
 

@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
+
 public class ShopManager : MonoBehaviour
 {
     public static ShopManager instance;
 
-    public int coins = 10;
+    public int coins = 300;
     public Upgrade[] upgrades;
 
     public Text coinText;
@@ -14,7 +13,7 @@ public class ShopManager : MonoBehaviour
     public Transform shopContent;
     public GameObject itemPrefab;
     public Player player;
-    public Health health;
+    
     
     private void Awake()
     {
@@ -76,27 +75,23 @@ public class ShopManager : MonoBehaviour
             //connecting to currency in user 
            
         }
-       /* Debug.Log($"{GameObject.Find("GameController").GetComponent<GameUser>().user.currency} " +
-               $"should equal {GameObject.Find(ShopManager).GetComponent<shopm>() shop.coins}";*/
+       
     }
     public void ApplyUpgrade(Upgrade upgrade)
     {
         switch(upgrade.name)
         {
-            case "Speed":
+            case "Speed" :
                 player.PlayerSpeed += 2f;
                 break;
-
-           /* case  "potion":
-                health.startingHealth = 1 ;
-                break;
-
             default:
                 Debug.Log("No upgrade avail :(");
                 break;
-           */
 
-            
+
+
+
+
         }
        
     }
@@ -121,4 +116,5 @@ public class Upgrade
     public Sprite image;
     [HideInInspector] public int quantity;
     [HideInInspector] public GameObject itemRef;
+    
 }
