@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Options.unity
     guid: 3c6bf0d8ea03f214ba5a8465913e5f6e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Settings.unity
     guid: ae710e08ab6b205489262d6741e92bb0
   - enabled: 1
@@ -38,9 +38,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/shop1.unity
-    guid: b13b73ae6e7beda48a93f5a5ebf4cdc1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/chrmenu.unity
     guid: c3ec4605555286941b67032966d0f963
