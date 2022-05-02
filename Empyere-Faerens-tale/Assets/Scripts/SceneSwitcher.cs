@@ -46,6 +46,10 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("innercastle");
     }
+    public void GottoNar()
+    {
+        SceneManager.LoadScene("Opening Narration");
+    }
    
    
     //these are the buttons from the main menu options to return to main
