@@ -21,7 +21,7 @@ public class NPCTalk : MonoBehaviour
     
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("triggers");
+       
 
         if (toggle)
         {

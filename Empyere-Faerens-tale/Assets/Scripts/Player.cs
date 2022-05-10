@@ -53,10 +53,10 @@ public class Player : MonoBehaviour
         moveDelta = new Vector3(x, y,3);
         //turns left or right and up and down 
         if (moveDelta.x > 0)
-            transform.localScale = new Vector3(-6, 6, 6);
+            transform.localScale = new Vector3(-3, 3, 6);
 
         else if (moveDelta.x < 0)
-            transform.localScale = new Vector3(6, 6, 6);
+            transform.localScale = new Vector3(3, 3, 6);
         animator.SetFloat("speed", Mathf.Abs(x));
         //whether to go to the facing away anim or not
         animator.SetFloat("vertical", Mathf.Abs(y));
@@ -78,6 +78,7 @@ public class Player : MonoBehaviour
         //rotate back if soemthing hits the player 
         UnityEngine.Quaternion rotated = transform.rotation;
         transform.Rotate(new Vector3(rotated.x,rotated.y,-rotated.z));
+        
 
 
        

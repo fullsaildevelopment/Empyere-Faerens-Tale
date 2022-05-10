@@ -65,6 +65,7 @@ public class DialogueManager : MonoBehaviour
                     DisplayNextSentence();
                 }
             }
+            Debug.Log(isDone);
 
 
         }
@@ -101,6 +102,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Conversation Over");
         isDone = true;
         //Time.timeScale = 1;
+        Debug.Log(isDone);
     }
 
     

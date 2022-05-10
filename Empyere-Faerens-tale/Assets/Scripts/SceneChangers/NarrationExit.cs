@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NarrationToOpenCutscene : MonoBehaviour
+public class NarrationExit : MonoBehaviour
 {
     // Start is called before the first frame update
     GameObject Dialogue;
@@ -21,5 +21,4 @@ public class NarrationToOpenCutscene : MonoBehaviour
         }
         
     }
-
 }
