@@ -16,7 +16,7 @@ public class BattleMenuButtons : MonoBehaviour
     public void targetAttack()
     {
         BattleHeart go = GameObject.Find("BattleManager").GetComponent<BattleHeart>();
-        GameObject.Find("TargetSelector").GetComponent<SelectorParent>().activate(true);
+        GameObject.Find("TargetSelector").GetComponent<SelectorParent>().activate(false);
         //GameObject.Find("TargetSelector").GetComponent<SelectorParent>().TargetList = go.enemypartyManager.party.active_characters;
         GameObject.Find("TargetSelector").GetComponent<SelectorParent>().setskill(go.BattleOrder[go.counter].Key.attack);
         GameObject.Find("BattleManager").GetComponent<BattleHeart>().SetButtons(false);

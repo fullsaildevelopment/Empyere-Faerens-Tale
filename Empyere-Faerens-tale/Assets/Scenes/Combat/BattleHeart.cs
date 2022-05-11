@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 
 public class BattleHeart : MonoBehaviour
@@ -109,7 +110,7 @@ public class BattleHeart : MonoBehaviour
         }
 
         //Debug.Log(counter);
-        Debug.Log($"Turn: {turnCounter} Current Battle Order {counter}");
+        Debug.Log($"Turn: {turnCounter} Current Battle Order : {counter}");
         Debug.Log($"Current: {BattleOrder[counter].Key.Name}");
 
         //Debug.Log(turnCounter);
@@ -162,6 +163,10 @@ public class BattleHeart : MonoBehaviour
             {
                 battleEnd = true;
                 battleWon = false;
+            }
+            if(battleEnd)
+            {
+                SceneManager.LoadScene(12, LoadSceneMode.Single);
             }
 
         }
