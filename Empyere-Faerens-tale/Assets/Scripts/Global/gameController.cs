@@ -22,13 +22,13 @@ public class gameController : MonoBehaviour
         Serializer sz = new Serializer();
 
         //foreach(string str in equipFiles) {}
-        foreach (string file in itemFiles)
+        /*foreach (string file in itemFiles)
         {
             ITEMS item = new ITEMS();
             sz.DeserializeItemFull(file, out item);
             items.Add(item);
         }
-
+*/
         //TODO: Change current scene managaement script. 
         //SceneManager.LoadScene(1, LoadSceneMode.Additive);
 

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ItemCreation : MonoBehaviour
 {
-    List<ITEMS> items = new List<ITEMS>();
+    //List<ITEMS> items = new List<ITEMS>();
     List<Equipment> equip = new List<Equipment>();
     List<Skill> SkillList = new List<Skill>();
 
     private void Awake()
     {
-        #region ITEMS Creation
+/*        #region ITEMS Creation
         ITEMS potion = new ITEMS();
         potion.Name = "Potion";
         potion.Type = "Heal";
@@ -88,7 +88,7 @@ public class ItemCreation : MonoBehaviour
         bomb.price = 20;
         items.Add(bomb);
         #endregion
-
+*/
         #region Equipment Creation
 
         #region Weapons
@@ -352,14 +352,14 @@ public class ItemCreation : MonoBehaviour
         #endregion
     }
 
-    public void createitems()
+    /*public void createitems()
     {
         foreach (ITEMS item in items)
         {
             Serializer sz = new Serializer();
             sz.SerializeItem(item);
         }
-    }
+    }*/
     public void createequip()
     {
         foreach (Equipment equipment in equip)

@@ -94,8 +94,40 @@ public class Serializer
 
         character = Char;
     }
+    public void SerializeEnemy(Enemy character)
+    {
+        string path = "Enemies/" + character.Name + ".xml";
 
-    public void SerializeItem(ITEMS item)
+        StreamWriter sw = new StreamWriter(path);
+
+        System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(character.GetType());
+        x.Serialize(sw, character);
+
+        sw.Close();
+        sw = new StreamWriter(path);
+
+        System.Xml.Serialization.XmlSerializer y = new System.Xml.Serialization.XmlSerializer(character.GetType());
+        y.Serialize(sw, character);
+
+        sw.Close();
+    }
+
+    public void DeserializeEnemy(string characterName, out Enemy character)
+    {
+        string path = "Enemies/" + characterName + ".xml";
+
+        StreamReader sr = new StreamReader(path);
+
+        Enemy Char = new Enemy();
+
+        System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(Char.GetType());
+        Char = (Enemy)x.Deserialize(sr);
+        sr.Close();
+
+        character = Char;
+    }
+
+/*    public void SerializeItem(Item item)
     {
         string path = "Items/" + item.Name + ".xml";
 
@@ -111,33 +143,33 @@ public class Serializer
         y.Serialize(sw, item);
 
         sw.Close();
-    }
+    }*/
 
-    public void DeserializeItem(string itemName, out ITEMS item)
+    public void DeserializeItem(string itemName, out Item item)
     {
         string path = "Items/" + itemName + ".xml";
 
         StreamReader sr = new StreamReader(path);
 
-        ITEMS obj = new ITEMS();
+        Item obj = new Item();
 
         System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(obj.GetType());
-        obj = (ITEMS)x.Deserialize(sr);
+        obj = (Item)x.Deserialize(sr);
         sr.Close();
 
         item = obj;
     }
 
-    public void DeserializeItemFull(string itemName, out ITEMS item)
+    public void DeserializeItemFull(string itemName, out Item item)
     {
         string path = itemName;
 
         StreamReader sr = new StreamReader(path);
 
-        ITEMS obj = new ITEMS();
+        Item obj = new Item();
 
         System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(obj.GetType());
-        obj = (ITEMS)x.Deserialize(sr);
+        obj = (Item)x.Deserialize(sr);
         sr.Close();
 
         item = obj;

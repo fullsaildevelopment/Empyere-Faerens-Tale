@@ -79,7 +79,7 @@ public class Skill : BaseObject
             cost = 0;
         }
     }
-    public void AttachSkill(Character c)
+    /*public void AttachSkill(Character c)
     {
         if (c.Statuses.ContainsKey(this) == true && c.Statuses[this] < 3)
         {
@@ -93,7 +93,7 @@ public class Skill : BaseObject
         {
             return;
         }
-    }
+    }*/
     #endregion
 
 }
