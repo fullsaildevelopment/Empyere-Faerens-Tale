@@ -57,7 +57,7 @@ public class Party : MonoBehaviour
         active_characters[i-1] = new Character();
         return active_characters;
     }
-    //Returns Equipment of Selected Character in an array. Armor first.
+/*    //Returns Equipment of Selected Character in an array. Armor first.
     public Equipment[] GetSelectedEquip()
     {
         Equipment[] equip = new Equipment[2];
@@ -76,7 +76,7 @@ public class Party : MonoBehaviour
     {
         selected.Weapon = weapon;
         return selected;
-    }
+    }*/
 
     #endregion
 

@@ -1,14 +1,14 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Net;
+using UnityEngine;
 using System.Collections.Generic;
-
 
 public class Character : BaseObject
 {
     #region Members
 
-    //public Identiy ObjectType;
+    //public Identity ObjectType;
     public int MaxHealth,
     CurrentHealth,
     Speed,
@@ -16,6 +16,7 @@ public class Character : BaseObject
     Defense,
     //This doubles as mana count and strength
     Magic,
+    CurrentMagic,
     MagicDefense;
 
     public string Name;
@@ -27,15 +28,15 @@ public class Character : BaseObject
     public string ElementalAffinity;
 
     //Equipment Memebers
-    public Equipment Armor = new Equipment();
-    public Equipment Weapon = new Equipment();
+    /*public Equipment Armor = new Equipment();
+    public Equipment Weapon = new Equipment();*/
 
     //Basic Attack Skill
     public Skill attack = new Skill(1);
+    public List<Skill> skillList = new List<Skill>();
 
-    //Statuses
-    //Max of 3 of a single skill. (Makes skills stack to increase effect. Ex: 2 Stacks of poison each cause 5 pnts of damage for a total of 10.
-    public Dictionary<Skill, int> Statuses = new Dictionary<Skill, int>();
+    //Sprite to be used in unity
+    [SerializeField] public Sprite sprite;
 
     #endregion Members
 
@@ -138,6 +139,7 @@ public class Character : BaseObject
         ObjectType = Identiy.Character;
         MaxHealth = 0;
         CurrentHealth = 0;
+        CurrentMagic = 0;
         Speed = 0;
         Attack = 0;
         Defense = 0;
