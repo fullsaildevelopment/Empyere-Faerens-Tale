@@ -3,6 +3,7 @@
   <ObjectType>Equipment</ObjectType>
   <boost>3</boost>
   <boostType>Attack</boostType>
+  <equipType>Weapon</equipType>
   <Name>Wooden Sword</Name>
   <price>0</price>
 </Equipment>

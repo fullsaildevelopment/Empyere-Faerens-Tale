@@ -3,6 +3,7 @@
   <ObjectType>Equipment</ObjectType>
   <boost>18</boost>
   <boostType>Defense</boostType>
+  <equipType>Armor</equipType>
   <Name>Steel Gauntlets</Name>
   <price>0</price>
 </Equipment>

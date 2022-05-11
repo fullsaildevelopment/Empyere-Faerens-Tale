@@ -3,6 +3,7 @@
   <ObjectType>Equipment</ObjectType>
   <boost>9</boost>
   <boostType>Defense</boostType>
+  <equipType>Armor</equipType>
   <Name>Chainmail Vest</Name>
   <price>0</price>
 </Equipment>

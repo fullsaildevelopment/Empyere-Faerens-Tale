@@ -2,7 +2,7 @@
 <Item xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ObjectType>Item</ObjectType>
   <Name>Turbo-Elixir</Name>
-  <Type>Full Party</Type>
+  <Type>FullParty</Type>
   <Points>1</Points>
   <price>325</price>
 </Item>

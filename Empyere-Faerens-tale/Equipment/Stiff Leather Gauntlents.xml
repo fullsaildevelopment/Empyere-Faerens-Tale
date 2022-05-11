@@ -3,6 +3,7 @@
   <ObjectType>Equipment</ObjectType>
   <boost>6</boost>
   <boostType>Defense</boostType>
+  <equipType>Armor</equipType>
   <Name>Stiff Leather Gauntlents</Name>
   <price>0</price>
 </Equipment>

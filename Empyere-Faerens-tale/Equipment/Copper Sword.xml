@@ -3,6 +3,7 @@
   <ObjectType>Equipment</ObjectType>
   <boost>8</boost>
   <boostType>Attack</boostType>
+  <equipType>Weapon</equipType>
   <Name>Copper Sword</Name>
   <price>0</price>
 </Equipment>
