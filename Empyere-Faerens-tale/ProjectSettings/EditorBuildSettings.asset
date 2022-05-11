@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PathtoGargantura.unity
     guid: 383841ebb96f364498ff1408792743ee
+  - enabled: 1
+    path: Assets/Scenes/CombatDev/dev.unity
+    guid: 23a910bbe04ebba4ea60152b9e66e3b2
+  - enabled: 1
+    path: Assets/Scenes/CombatDev/Combat/Battle.unity
+    guid: 6a62dc1340c9be64b818e75e743ead1f
   m_configObjects: {}
