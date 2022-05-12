@@ -3,6 +3,7 @@
   <ObjectType>Equipment</ObjectType>
   <boost>0</boost>
   <boostType>Attack</boostType>
+  <equipType>Weapon</equipType>
   <Name>Studded Shield</Name>
   <price>0</price>
 </Equipment>

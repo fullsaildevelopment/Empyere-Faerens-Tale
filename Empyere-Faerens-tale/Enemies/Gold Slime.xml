@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Enemy xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ObjectType>Enemy</ObjectType>
+  <MaxHealth>30</MaxHealth>
+  <CurrentHealth>30</CurrentHealth>
+  <Speed>5</Speed>
+  <Attack>5</Attack>
+  <Defense>10</Defense>
+  <Magic>20</Magic>
+  <CurrentMagic>20</CurrentMagic>
+  <MagicDefense>10</MagicDefense>
+  <Name>Gold Slime</Name>
+  <Class>Null</Class>
+  <ElementalAffinity>Null</ElementalAffinity>
+  <Armor>
+    <ObjectType>Equipment</ObjectType>
+    <boost>0</boost>
+    <boostType>None</boostType>
+    <equipType>None</equipType>
+    <Name>Null</Name>
+    <price>0</price>
+  </Armor>
+  <Weapon>
+    <ObjectType>Equipment</ObjectType>
+    <boost>0</boost>
+    <boostType>None</boostType>
+    <equipType>None</equipType>
+    <Name>Null</Name>
+    <price>0</price>
+  </Weapon>
+  <attack>
+    <ObjectType>Skill</ObjectType>
+    <name>Attack</name>
+    <type>Damage</type>
+    <damage>None</damage>
+    <target>Single</target>
+    <statcheck>Attack</statcheck>
+    <modifier>1</modifier>
+    <cost>0</cost>
+  </attack>
+  <skillList>
+    <Skill>
+      <ObjectType>Skill</ObjectType>
+      <name>Bless</name>
+      <type>Heal</type>
+      <damage>None</damage>
+      <target>Single</target>
+      <statcheck>Magic</statcheck>
+      <modifier>1</modifier>
+      <cost>10</cost>
+    </Skill>
+  </skillList>
+  <type>None</type>
+</Enemy>

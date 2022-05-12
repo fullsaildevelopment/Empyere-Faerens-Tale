@@ -2,7 +2,7 @@
 <Item xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ObjectType>Item</ObjectType>
   <Name>Water Gem</Name>
-  <Type>Damage Water</Type>
+  <Type>Damage</Type>
   <Points>0.2</Points>
   <price>20</price>
 </Item>
