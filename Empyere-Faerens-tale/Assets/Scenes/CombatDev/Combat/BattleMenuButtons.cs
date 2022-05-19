@@ -9,6 +9,7 @@ public class BattleMenuButtons : MonoBehaviour
     //Unload combat scene
 
     //[SerializeField] BattleHeart go;
+    [SerializeField] List<Animator> animators = new List<Animator>();
     public void escape()
     {
         SceneManager.LoadScene(12, LoadSceneMode.Single);
@@ -46,5 +47,12 @@ public class BattleMenuButtons : MonoBehaviour
     {
         System.Random random = new System.Random();
         return random.Next(0, 3);
+    }
+    public void fadeAnimations()
+    {
+        foreach (Animator animator in animators)
+        {
+            animator.SetTrigger("Fade");
+        }
     }
 }
