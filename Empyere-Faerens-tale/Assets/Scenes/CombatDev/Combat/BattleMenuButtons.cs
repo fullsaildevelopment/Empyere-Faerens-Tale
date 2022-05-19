@@ -41,6 +41,7 @@ public class BattleMenuButtons : MonoBehaviour
     public void nextTurn()
     {
         GameObject.Find("BattleManager").GetComponent<BattleHeart>().heartbeat();
+        fadeAnimations();
 
     }
     public int pickranomenemy()
@@ -52,7 +53,11 @@ public class BattleMenuButtons : MonoBehaviour
     {
         foreach (Animator animator in animators)
         {
-            animator.SetTrigger("Fade");
+            if(animator.GetCurrentAnimatorStateInfo(0).IsName("Faded") == false)
+            {
+                animator.SetTrigger("Fade");
+            }
+
         }
     }
 }
