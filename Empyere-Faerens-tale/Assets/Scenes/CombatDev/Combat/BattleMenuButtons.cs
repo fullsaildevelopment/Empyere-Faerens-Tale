@@ -9,17 +9,36 @@ public class BattleMenuButtons : MonoBehaviour
     //Unload combat scene
 
     //[SerializeField] BattleHeart go;
+    [SerializeField] List<Animator> selected = new List<Animator>();
+    [SerializeField] List<Animator> damaged = new List<Animator>();
+
+    public bool toggle = false;
     public void escape()
     {
         SceneManager.LoadScene(12, LoadSceneMode.Single);
     }
     public void targetAttack()
     {
-        BattleHeart go = GameObject.Find("BattleManager").GetComponent<BattleHeart>();
-        GameObject.Find("TargetSelector").GetComponent<SelectorParent>().activate(false);
-        //GameObject.Find("TargetSelector").GetComponent<SelectorParent>().TargetList = go.enemypartyManager.party.active_characters;
-        GameObject.Find("TargetSelector").GetComponent<SelectorParent>().setskill(go.BattleOrder[go.counter].Key.attack);
-        GameObject.Find("BattleManager").GetComponent<BattleHeart>().SetButtons(false);
+        if (!toggle)
+        {
+            BattleHeart go = GameObject.Find("BattleManager").GetComponent<BattleHeart>();
+            GameObject.Find("TargetSelector").GetComponent<SelectorParent>().activate(false);
+            //GameObject.Find("TargetSelector").GetComponent<SelectorParent>().TargetList = go.enemypartyManager.party.active_characters;
+            GameObject.Find("TargetSelector").GetComponent<SelectorParent>().setskill(go.BattleOrder[go.counter].Key.attack);
+            GameObject.Find("BattleManager").GetComponent<BattleHeart>().SetButtons(toggle);
+            GameObject.Find("BattleManager").GetComponent<BattleHeart>().SetNextTurn(!toggle);
+            toggle = true;
+        }
+        else
+        {
+            BattleHeart go = GameObject.Find("BattleManager").GetComponent<BattleHeart>();
+            GameObject.Find("TargetSelector").GetComponent<SelectorParent>().setbuttons(false);
+            //GameObject.Find("TargetSelector").GetComponent<SelectorParent>().TargetList = go.enemypartyManager.party.active_characters;
+            GameObject.Find("TargetSelector").GetComponent<SelectorParent>().setskill(go.BattleOrder[go.counter].Key.attack);
+            GameObject.Find("BattleManager").GetComponent<BattleHeart>().SetButtons(toggle);
+            GameObject.Find("BattleManager").GetComponent<BattleHeart>().SetNextTurn(toggle);
+            toggle = false;
+        }
 
 
     }
@@ -40,11 +59,30 @@ public class BattleMenuButtons : MonoBehaviour
     public void nextTurn()
     {
         GameObject.Find("BattleManager").GetComponent<BattleHeart>().heartbeat();
+        fadeAnimations();
 
     }
     public int pickranomenemy()
     {
         System.Random random = new System.Random();
         return random.Next(0, 3);
+    }
+    public void fadeAnimations()
+    {
+        foreach (Animator animator in damaged)
+        {
+            if(animator.GetCurrentAnimatorStateInfo(0).IsName("Faded") == false)
+            {
+                animator.SetTrigger("Fade");
+            }
+
+        }
+        foreach (Animator animator in selected)
+        {
+            if(animator.GetCurrentAnimatorStateInfo(0).IsName("SelectedFaded") == false)
+            {
+                animator.SetTrigger("Fade");
+            }
+        }
     }
 }
