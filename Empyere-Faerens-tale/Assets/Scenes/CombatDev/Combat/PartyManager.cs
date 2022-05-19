@@ -8,7 +8,7 @@ public enum PCNPC
 public class PartyManager : MonoBehaviour
 {
     public Party party;
-    [SerializeField] private CharacterManager[] characterManagerArr;
+    [SerializeField] public CharacterManager[] characterManagerArr;
     [SerializeField] public PCNPC PcNpc;
 
     private void Awake()

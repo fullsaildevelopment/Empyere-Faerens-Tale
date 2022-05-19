@@ -135,6 +135,7 @@ public class BattleHeart : MonoBehaviour
                 /*Skill attack = BattleOrder[counter].Key.attack;
                 pcparty.active_characters[j].CurrentHealth -= (int)(attack.modifier * BattleOrder[counter].Key.Attack);*/
                 enemypartyManager.attack(allypartyManager.party.active_characters[j], BattleOrder[counter].Key);
+                allypartyManager.characterManagerArr[j].Damaged.SetTrigger("Activate");
                 Debug.Log("NPC");
 
                 //SetButtons(true);
@@ -190,6 +191,13 @@ public class BattleHeart : MonoBehaviour
         {
             if (c.Name == ch.Name)
             {
+                foreach(CharacterManager chm in allypartyManager.characterManagerArr)
+                {
+                    if(ch.Name == chm.character.Name)
+                    {
+                        chm.Selected.SetTrigger("Activate");
+                    }
+                }
                 return true;
             }
 

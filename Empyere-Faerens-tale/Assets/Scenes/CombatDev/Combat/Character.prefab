@@ -91,6 +91,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterStatus: {fileID: 0}
+  Selected: {fileID: 6729848213371882411}
+  Damaged: {fileID: 5477096178268208412}
 --- !u!1 &4795662508226683609
 GameObject:
   m_ObjectHideFlags: 0

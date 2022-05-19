@@ -9,7 +9,8 @@ public class BattleMenuButtons : MonoBehaviour
     //Unload combat scene
 
     //[SerializeField] BattleHeart go;
-    [SerializeField] List<Animator> animators = new List<Animator>();
+    [SerializeField] List<Animator> selected = new List<Animator>();
+    [SerializeField] List<Animator> damaged = new List<Animator>();
     public void escape()
     {
         SceneManager.LoadScene(12, LoadSceneMode.Single);
@@ -51,13 +52,20 @@ public class BattleMenuButtons : MonoBehaviour
     }
     public void fadeAnimations()
     {
-        foreach (Animator animator in animators)
+        foreach (Animator animator in damaged)
         {
             if(animator.GetCurrentAnimatorStateInfo(0).IsName("Faded") == false)
             {
                 animator.SetTrigger("Fade");
             }
 
+        }
+        foreach (Animator animator in selected)
+        {
+            if(animator.GetCurrentAnimatorStateInfo(0).IsName("SelectedFaded") == false)
+            {
+                animator.SetTrigger("Fade");
+            }
         }
     }
 }

@@ -7,6 +7,8 @@ public class CharacterManager : MonoBehaviour
 {
     public Character character;
     [SerializeField] public GameObject CharacterStatus;
+    [SerializeField] public Animator Selected;
+    [SerializeField] public Animator Damaged;
 
     public void update()
     {
