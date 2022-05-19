@@ -85,6 +85,7 @@ public class BattleHeart : MonoBehaviour
         }
         Debug.Log("BattleOrder updated");
         SetButtons(false);
+        SetNextTurn(false);
 
         //heartbeat();
 
@@ -119,6 +120,7 @@ public class BattleHeart : MonoBehaviour
             if(isPC(BattleOrder[counter].Key) && BattleOrder[counter].Key.CurrentHealth > 0)
             {
                 SetButtons(true);
+                SetNextTurn(true);
 
 
                 Debug.Log("PC");
@@ -131,6 +133,7 @@ public class BattleHeart : MonoBehaviour
             else
             {
                 SetButtons(false);
+                SetNextTurn(false);
                 int j = pickranomally();
                 /*Skill attack = BattleOrder[counter].Key.attack;
                 pcparty.active_characters[j].CurrentHealth -= (int)(attack.modifier * BattleOrder[counter].Key.Attack);*/
@@ -176,14 +179,19 @@ public class BattleHeart : MonoBehaviour
     }
     public void SetButtons(bool flag)
     {
-        Attack.SetActive(flag);
+        //Attack.SetActive(flag);
         Skill.SetActive(flag);
         Item.SetActive(flag);
         SwapWep.SetActive(flag);
         SwapArmor.SetActive(flag);
-        NextTurn.SetActive(!flag);
+        //NextTurn.SetActive(!flag);
         //Disabled for dev purposes
         //Escape.SetActive(flag);
+    }
+    public void SetNextTurn(bool flag)
+    {
+        Attack.SetActive(flag);
+        NextTurn.SetActive(!flag);
     }
     public bool isPC(Character c)
     {

@@ -10,6 +10,7 @@ public class SelectorParent : MonoBehaviour
     [SerializeField] public List<CharacterManager> AllyList;
     [SerializeField] public List<Animator> EnemyDamageAnims;
     [SerializeField] public List<GameObject> gameObjects;
+    [SerializeField] public BattleMenuButtons bmb;
     bool allyTarget = false;
     public Skill chosenSkill = new Skill();
 
@@ -64,6 +65,9 @@ public class SelectorParent : MonoBehaviour
         setbuttons(false);
         BM.GetComponent<BattleHeart>().enemypartyManager.update();
         BM.GetComponent<BattleHeart>().allypartyManager.update();
+        bmb.toggle = false;
+        BM.GetComponent<BattleHeart>().SetNextTurn(false);
+        
     }
     public void setbuttons(bool b)
     {
