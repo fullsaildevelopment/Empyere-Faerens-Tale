@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class PauseBehavior : MonoBehaviour
 {
     public GameObject pauseScreen;
+  
     public bool ispaused;
 
 
@@ -44,12 +47,24 @@ public class PauseBehavior : MonoBehaviour
         pauseScreen.SetActive(false);
         Time.timeScale = 1f;
         ispaused = false;
+        //close the cntrl pnl
+       
+       
     }
     public void GOtoMainMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Title");
     }
+    public void GoTocntl()
+    {
+        SceneManager.LoadScene("Options");
+        Time.timeScale = 1f;
+       
+        
+        
+    }
+   
     public void QuitGame()
     {
         Application.Quit();
